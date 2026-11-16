@@ -1,0 +1,104 @@
+name: Optimize Assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/*.png'
+      - 'assets/**/*.png'
+      - 'assets/*.PNG'
+      - 'assets/**/*.PNG'
+      - 'assets/*.Png'
+      - 'assets/**/*.Png'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: optimize-assets
+  cancel-in-progress: false
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install cwebp
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq webp imagemagick
+
+      - name: Convert PNG ke WebP
+        run: |
+          set -euo pipefail
+          shopt -s globstar nullglob nocaseglob
+
+          total=0; before=0; after=0
+
+          for f in assets/*.png assets/**/*.png; do
+            [ -f "$f" ] || continue
+
+            w=$(identify -format '%w' "$f")
+            h=$(identify -format '%h' "$f")
+            ratio=$(( w * 100 / h ))
+
+            if [ "$ratio" -ge 150 ]; then
+              cap=1920; q=92; label="hero/wide"
+            elif [ "$ratio" -le 90 ]; then
+              cap=1000; q=88; label="portrait"
+            else
+              cap=900;  q=88; label="square"
+            fi
+
+            tw=$w
+            [ "$w" -gt "$cap" ] && tw=$cap
+
+            out="${f%.*}.webp"
+            cwebp -quiet -q "$q" -m 6 -sharp_yuv -metadata none \
+                  -resize "$tw" 0 "$f" -o "$out"
+
+            before=$(( before + $(stat -c%s "$f") ))
+            after=$(( after + $(stat -c%s "$out") ))
+            rm -f "$f"
+            total=$(( total + 1 ))
+
+            echo "OK  $(basename "$f") -> $(basename "$out")  ${tw}px  q${q}  (${label})"
+          done
+
+          if [ "$total" -gt 0 ]; then
+            saved=$(( 100 - after * 100 / before ))
+            echo "Selesai: ${total} file, $(numfmt --to=iec $before) -> $(numfmt --to=iec $after) (hemat ${saved}%)"
+            {
+              echo "### Optimasi selesai"
+              echo ""
+              echo "| | |"
+              echo "|---|---|"
+              echo "| File diproses | ${total} |"
+              echo "| Sebelum | $(numfmt --to=iec $before) |"
+              echo "| Sesudah | $(numfmt --to=iec $after) |"
+              echo "| Hemat | ${saved}% |"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Tidak ada PNG untuk diproses."
+          fi
+
+      - name: Commit hasil
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A assets
+
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan untuk di-commit."
+            exit 0
+          fi
+
+          git commit -m "chore(assets): optimasi otomatis PNG -> WebP [skip ci]"
+          git push
