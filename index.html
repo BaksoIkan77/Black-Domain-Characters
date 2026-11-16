@@ -27,11 +27,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opac
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit}
 .view[hidden]{display:none!important}
-/* flex row yang tidak boleh menyusut — penangkal reset min-width di atas */
+
+/* flex row yang tidak boleh menyusut */
 .toc ol > li,
 .roster ol > li,
 .chips > li,
-.forms__tabs > label{
+.forms__tab{
   flex:0 0 auto;
   min-width:auto;
 }
@@ -135,12 +136,15 @@ main{min-width:0;padding-top:30px}
 
 /* ═══ FORM TABS ═══ */
 .forms{margin:24px 0 0}
-.forms>input{position:absolute;opacity:0;pointer-events:none}
-.forms__tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px;border-bottom:1px solid var(--line-soft);padding-bottom:13px}
-.forms__tabs label{cursor:pointer;padding:9px 14px;border-radius:8px;border:1px solid transparent;
-  font:500 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:all .18s}
-.forms__tabs label:hover{color:var(--ink);background:rgba(255,255,255,.03)}
+.forms__tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px;
+  border-bottom:1px solid var(--line-soft);padding-bottom:13px}
+.forms__tab{cursor:pointer;padding:9px 14px;border-radius:8px;border:1px solid transparent;
+  background:transparent;font:500 10.5px/1 var(--sans);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);transition:all .18s}
+.forms__tab:hover{color:var(--ink);background:rgba(255,255,255,.03)}
+.forms__tab.is-active{color:#fff;background:rgba(194,43,64,.14);border-color:var(--garnet-dim)}
 .forms__panels>.panel{display:none;grid-template-columns:190px minmax(0,1fr);gap:26px;align-items:start}
+.forms__panels>.panel.is-active{display:grid}
 .panel .ph{aspect-ratio:3/4}
 .panel h4{margin:0 0 11px;font:400 21px/1.2 var(--serif);color:#f0e7e5}
 .panel p{margin:0 0 11px;font-size:14.5px;color:var(--ink-2)}
@@ -148,12 +152,6 @@ main{min-width:0;padding-top:30px}
 .meta em{font-style:normal;padding:5px 10px;border-radius:6px;background:rgba(255,255,255,.035);
   border:1px solid var(--line-soft);font:500 9.5px/1 var(--sans);letter-spacing:.1em;
   text-transform:uppercase;color:#a08a8f}
-#f-elite:checked~.forms__tabs label[for="f-elite"],
-#f-shara:checked~.forms__tabs label[for="f-shara"],
-#f-king:checked~.forms__tabs label[for="f-king"]{color:#fff;background:rgba(194,43,64,.14);border-color:var(--garnet-dim)}
-#f-elite:checked~.forms__panels .p-elite,
-#f-shara:checked~.forms__panels .p-shara,
-#f-king:checked~.forms__panels .p-king{display:grid}
 
 /* ═══ PLATE ═══ */
 .plate{margin:30px 0 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden}
@@ -218,7 +216,7 @@ main{min-width:0;padding-top:30px}
 .keepsake__body p{margin:0 0 11px;font-size:15px;line-height:1.7;color:var(--ink-2)}
 .keepsake__body p:last-child{margin-bottom:0}
 
-/* ═══ RELATIONSHIPS (text-only) ═══ */
+/* ═══ RELATIONSHIPS ═══ */
 .rels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:20px}
 .rel{padding:17px 19px;border-radius:0 10px 10px 0;border:1px solid var(--line-soft);
   border-left:2px solid var(--garnet-dim);background:var(--panel)}
@@ -299,7 +297,7 @@ main{min-width:0;padding-top:30px}
     padding:8px 12px;
     font-size:12px;
   }
-    
+
   .roster{margin-top:0;padding-top:0;border-top:0;overflow-x:auto;scrollbar-width:none}
   .roster::-webkit-scrollbar{display:none}
   .roster h2{display:none}
@@ -314,7 +312,7 @@ main{min-width:0;padding-top:30px}
 
   .forms__tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:4px}
   .forms__tabs::-webkit-scrollbar{display:none}
-  .forms__tabs label{white-space:nowrap;flex:0 0 auto}
+  .forms__tab{white-space:nowrap;flex:0 0 auto}
   .forms__panels>.panel{grid-template-columns:1fr;gap:16px}
   .panel .ph{max-width:180px}
 
@@ -484,17 +482,14 @@ main{min-width:0;padding-top:30px}
       <section class="sec" id="appearance">
         <div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Three bodies, one occupant</h2></div>
         <p>She keeps three forms, and which one you meet decides how long you have to describe it. The elite body is what the Council sees. The grey one is what the world sees. The third is what survives the meeting.</p>
-        <div class="forms">
-          <input type="radio" name="form" id="f-elite" checked>
-          <input type="radio" name="form" id="f-shara">
-          <input type="radio" name="form" id="f-king">
+        <div class="forms" data-forms>
           <div class="forms__tabs">
-            <label for="f-elite">Elite Form</label>
-            <label for="f-shara">Heavy Suppression · Shara</label>
-            <label for="f-king">Demon King</label>
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Heavy Suppression · Shara</button>
+            <button class="forms__tab" type="button">Demon King</button>
           </div>
           <div class="forms__panels">
-            <article class="panel p-elite">
+            <article class="panel is-active">
               <div class="ph" data-img="azalea-elite" data-fit="contain" data-label="Elite Form · 3:4"></div>
               <div><h4>The aristocratic shape</h4>
                 <p>Tall and pale as cut moonstone, built long and narrow — a body designed for economy of motion and nothing else. The face reads aristocratic before it reads beautiful: high cheekbones, a jaw with an edge, a full mouth that has forgotten how to smile without deciding to.</p>
@@ -503,7 +498,7 @@ main{min-width:0;padding-top:30px}
                 <div class="meta"><em>≈175 cm</em><em>Garnet eyes</em><em>Slit pupils</em><em>Horns retractable</em></div>
               </div>
             </article>
-            <article class="panel p-shara">
+            <article class="panel">
               <div class="ph" data-img="azalea-shara" data-fit="contain" data-label="Shara · suppressed form · 3:4"></div>
               <div><h4>The grey wanderer</h4>
                 <p>The same body under three layers of camouflage. Weathered grey-brown skin, a plain round face with soft edges, dull brown eyes, matted hair under a hood. She walks barefoot and slowly, and every step looks like the first one anyone has ever taken on that road.</p>
@@ -512,7 +507,7 @@ main{min-width:0;padding-top:30px}
                 <div class="meta"><em>≈168 cm</em><em>Aura: near-zero</em><em>Bare feet</em><em>48h limit</em></div>
               </div>
             </article>
-            <article class="panel p-king">
+            <article class="panel">
               <div class="ph" data-img="azalea-king" data-fit="contain" data-label="Demon King · 3:4"></div>
               <div><h4>The armour that is not armour</h4>
                 <p>When she stops being polite, her body grows an exoskeleton in three seconds: angular organic plate, black threaded with crimson, seamless and alive, closing over her with no gaps at all. The silhouette loses its gender. The face becomes a featureless helm with a faint red glow behind the slits.</p>
@@ -525,8 +520,7 @@ main{min-width:0;padding-top:30px}
         </div>
         <figure class="plate">
           <div class="plate__fig"><div class="ph" data-img="azalea-wings" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
-          <figcaption>
-            <span class="plate__label">The mark no one else carries</span>
+          <figcaption><span class="plate__label">The mark no one else carries</span>
             <p>Two scarred ridges between the shoulder blades, cut away by her own hand and carried through every form she wears. She reaches back to touch them while thinking — the way other people check a pocket for keys.</p>
           </figcaption>
         </figure>
@@ -687,11 +681,38 @@ main{min-width:0;padding-top:30px}
         <p class="lead">He rose from the mingled blood of two goddesses before anything in Ruinea had a name. He follows one being by choice, and that being has been asleep for nine hundred years.</p>
         <p>Vorlag treats the throne as a regency. He assessed Azalea, found her strong, and permitted the coronation — the word is accurate in his mind. He has stated within the command structure that if her strength falters, he will remove her. By force if necessary. He says this calmly, the way one states a weather forecast.</p>
       </section>
-      <section class="sec" id="v-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Two shapes, one predator</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="vorlag-hero" data-fit="contain" data-label="Noble Form"></div>
-        <p>In his noble form he stands two hundred and ten centimetres of gaunt, ash-white elegance — silver-white hair past the shoulders, blood-moon eyes set deep, a coat with a high collar and no ornament at all. He wears a small tail openly, because in the Black Domain a vampire's nature is a statement rather than a secret.</p>
-        <p>In combat the elegance goes. Limbs stretch past two hundred and fifty centimetres, fingers split into obsidian claws, and an eight-metre span of leathery wing unfolds from his back. The coat comes off first. He has never needed armour.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈210 cm</em><em>Ash-white</em><em>8 m wingspan</em><em>Submission aura 10 m</em></div>
+      <section class="sec" id="v-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Two shapes, one announcement</h2></div>
+        <p>He removes the coat before either form becomes dangerous. The gesture is the warning, and he has never needed armour.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Noble Form</button>
+            <button class="forms__tab" type="button">Feral Form</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="vorlag-noble" data-fit="contain" data-label="Noble Form · 3:4"></div>
+              <div><h4>The gaunt aristocrat</h4>
+                <p>Two hundred and ten centimetres of ash-white elegance over angular bone — silver-white hair fine as silk falling past the shoulders, blood-moon eyes set deep, fangs visible whenever he speaks at length. Clawed fingertips, dark and polished. A small tail worn openly, because in the Black Domain a vampire's nature is a statement rather than a secret.</p>
+                <p>The coat is archaic black with a high collar and no ornament at all. His aura carries ancient predatory weight: anything at Tier 5 or below within ten metres experiences involuntary submission, and any vampire reads his First Blood heritage as a pressure older than memory.</p>
+                <div class="meta"><em>≈210 cm</em><em>Ash-white</em><em>Blood-moon eyes</em><em>Submission aura 10 m</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vorlag-feral" data-fit="contain" data-label="Feral Form · 3:4"></div>
+              <div><h4>What the coat was hiding</h4>
+                <p>Limbs elongate past two hundred and fifty centimetres and the fingers split into razor-obsidian claws. An eight-metre span of leathery wing unfurls from his back, the eyes swell to solid crimson, and the skin tightens over a lengthened skeleton. The tail thickens into a whip. His voice drops into a low vibration that originates in the chest rather than the throat.</p>
+                <p>Within thirty metres the darkness itself bends toward him and light dims passively. He does not project fear in this shape — he becomes the environment that fear is an appropriate response to.</p>
+                <div class="meta"><em>250+ cm</em><em>8 m wingspan</em><em>Obsidian claws</em><em>Darkness bends 30 m</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="vorlag-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The coat comes off first</span>
+            <p>Every transformation begins the same way: the garment folded, set aside, and only then the change. He has never explained why, and the frontier commanders have learned not to ask.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="v-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Patience as a blade</h2></div>
         <p class="lead">He would never describe himself as lonely. He would describe himself as <em>undeployed</em>.</p>
@@ -805,10 +826,17 @@ main{min-width:0;padding-top:30px}
         <p>His simplicity is a framework, not a limitation. He tracks every battle, every opponent, every scar in perfect detail. He simply has no interest in problems that cannot be solved with force, because he has never met one that survived the application.</p>
       </section>
       <section class="sec" id="k-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Living magma</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="kazagar-hero" data-fit="contain" data-label="Monstrous Form"></div>
-        <p>Cracked obsidian plates over a molten core, orange-red glowing between the fissures. Thick blunt horns jut from a broad skull. His fists are the size of boulders and every step leaves a smouldering trail.</p>
-        <p>The glow is a readout. Bright orange-red is rage. Deep ember is calm. Near-dark is grief, and nobody has ever asked why it dims after a battle.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>4.5 m</em><em>Heat aura 10 m</em><em>Pain radius 3 m</em><em>No wings</em></div>
+        <p>One form. He has never used another, and considers the idea dishonest — a humanoid disguise would register to him as a lie, and he does not lie.</p>
+        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin:0 0 22px" data-img="kazagar-form" data-fit="contain" data-label="Monstrous Form · 3:4"></div>
+        <p>Four and a half metres of cracked obsidian plates over a molten core, orange-red glowing between the fissures. Thick blunt horns jut from a broad skull, the fists are the size of boulders, and every step scorches earth and leaves a smouldering trail. No wings, no tail, no adornment.</p>
+        <p>The glow is a readout rather than decoration: bright orange-red is rage, deep ember is calm, near-dark is grief. He radiates constant heat — ten metres of discomfort, three metres of physical pain for unprotected flesh. His aura reads as an elemental disaster zone rather than an individual.</p>
+        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>4.5 m</em><em>Heat aura 10 m</em><em>Pain radius 3 m</em><em>Self-repairing plate</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="kazagar-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">Ten metres of warned air</span>
+            <p>Nobody stands near him casually. The war-band has adapted; foreign envoys have not, and the ones who step too close learn why his armour is unnecessary.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="k-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Loud, honest, and warmer than he looks</h2></div>
         <p class="lead">He has never used Elite Form. A humanoid disguise would register to him as a lie, and he does not lie.</p>
@@ -917,11 +945,18 @@ main{min-width:0;padding-top:30px}
         <p class="lead">He sorts the world into things to protect and things to break. The First King is the first category. Everything else sorts itself.</p>
         <p>His loyalty is not philosophical. It is geological. The First King was the first thing that made standing still feel worth something, and he has been standing at that side ever since.</p>
       </section>
-      <section class="sec" id="g-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Stone, scars, and notches</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="gorath-hero" data-fit="contain" data-label="Monstrous Form"></div>
-        <p>Cracked grey-brown stone over orange fissures that never fully cool. Horns curve forward from the skull, each carved with a notch after every kill — hundreds of them, the oldest worn smooth, the newest still sharp. His knuckles are permanently scarred from battering fortress walls.</p>
-        <p>His stillness reads as terrain. Detection magic registers him as a landscape feature until he moves, and allies and enemies alike are surprised when the mountain walks.</p>
+      <section class="sec" id="g-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>A body that is a record</h2></div>
+        <p>One form, and he has never used another. The stone, the scars, and the notches are his history — hiding it would be erasing it.</p>
+        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin:0 0 22px" data-img="gorath-form" data-fit="contain" data-label="Monstrous Form · 3:4"></div>
+        <p>Six metres built like a mountain given legs. Deep grey-brown stone cracked over orange fissures that never fully cool. Massive horns curve forward from the skull, each carved with a notch after every kill — hundreds of them, the oldest worn smooth, the newest still sharp. His knuckles are permanently scarred from battering fortress walls.</p>
+        <p>His stillness reads as terrain. Detection magic and threat assessment register him as a landscape feature until he moves, and both allies and enemies are visibly surprised when the mountain walks.</p>
         <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>6 m</em><em>80% physical reduction</em><em>Notched horns</em><em>Seismic 5 km</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="gorath-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The ledger, carved where he can reach it</span>
+            <p>Each notch is a binding sigil, not a trophy. He runs his thumb along them oldest to newest, the way other people read a page they have already memorised.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="g-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Economical in everything</h2></div>
         <p class="lead">Single words when possible. Short sentences when necessary. He has never asked a question in his life.</p>
@@ -1031,11 +1066,47 @@ main{min-width:0;padding-top:30px}
         <p class="lead">She processes the world as a spatial equation. Every entity occupies coordinates, every conflict resolves through positioning, every outcome is a function of distance, timing, and force vectors.</p>
         <p>She holds the road nexus through which every supply line in the Black Domain runs. She has never used that as leverage. She has never needed to.</p>
       </section>
-      <section class="sec" id="a-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Starlight behind glass</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="alleen-hero" data-fit="contain" data-label="Elite Form"></div>
-        <p>Tall and regal, immaculate in deep blues and blacks, with amethyst eyes that rarely blink and never hurry. Two elegantly curved horns arc from her temples, polished and unscathed — never once touched in combat. Her hand rests on her sword pommel as a habit of authority.</p>
-        <p>In combat she shifts in stages: hair first, dissolving into drifting starlight; then hands, becoming deep-space darkness with points of light orbiting the fingers; then eyes, becoming raw stellar white. Each stage is a dial turned upward.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈185 cm</em><em>Amethyst eyes</em><em>Starlight partial</em><em>Gravity distortion 200 m</em></div>
+      <section class="sec" id="a-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Three states, dialled upward</h2></div>
+        <p>She shifts in stages — hair, then hands, then eyes — as though turning a dial. She finds the third state excessive, and uses it anyway when survival demands.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Partial Transformation</button>
+            <button class="forms__tab" type="button">Full Cosmic</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="alleen-elite" data-fit="contain" data-label="Elite Form · 3:4"></div>
+              <div><h4>Regal, and entirely unscathed</h4>
+                <p>Tall and regal with an ideal hourglass build, flawless pale skin over sharp aristocratic bone. Amethyst eyes that rarely blink and never hurry. Long dark blue hair, straight and perfectly kept, falling past the shoulders.</p>
+                <p>Two elegantly curved horns arc from her temples, polished and untouched — she has never let them take a blow. Wings and tail stay retracted. Her hand rests on her sword pommel as a habit of authority, and her aura reads as controlled cosmic pressure: something vast, held behind glass.</p>
+                <div class="meta"><em>≈185 cm</em><em>Amethyst eyes</em><em>Horns unscathed</em><em>Sword pommel habit</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="alleen-partial" data-fit="contain" data-label="Partial Transformation · 3:4"></div>
+              <div><h4>Starlight in stages</h4>
+                <p>Hair dissolves first into drifting starlight and nebula dust. Then the hands become deep-space darkness with points of light orbiting the fingers. Then the eyes shift from amethyst to raw stellar white, the pupils collapsing into miniature galaxies.</p>
+                <p>Her aura expands to twenty metres of mild spatial distortion — gravity fluctuates, compasses spin, and distance perception warps for anyone standing inside it. She keeps full consciousness and full control throughout. Each partial element grants proportional access to cosmic-scale output.</p>
+                <div class="meta"><em>Hair → hands → eyes</em><em>Distortion 20 m</em><em>140% base MAG</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="alleen-monstrous" data-fit="contain" data-label="Full Cosmic Manifestation · 3:4"></div>
+              <div><h4>A walking starfield</h4>
+                <p>Three hundred centimetres of humanoid silhouette composed entirely of deep space — galaxies and nebulae drifting across the surface, black between the stars. The face becomes a void with two points of concentrated stellar light. Her horns extend into curved spirals of compressed cosmic matter, and her limbs trail stardust that persists in the air for minutes.</p>
+                <p>Gravitational distortion reaches two hundred metres: unanchored objects drift toward her, light bends, and spatial perception collapses entirely for Tier 6 and below. Her aura registers as a celestial event rather than a presence.</p>
+                <div class="meta"><em>≈300 cm</em><em>Distortion 200 m</em><em>Stardust trail</em><em>Rarely used</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="alleen-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The sky, remembered</span>
+            <p>When she pushes her magic to maximum, faint echoes of the Breaking surface — a distant sound of reality tearing, a brief visual distortion. Allies within earshot experience momentary vertigo and never mention it.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="a-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>A smile used so long it became furniture</h2></div>
         <p class="lead">Terrifyingly patient, philosophical, quietly certain. She never raises her voice and never wastes a word.</p>
@@ -1146,11 +1217,38 @@ main{min-width:0;padding-top:30px}
         <p class="lead">He understands the world as fuel and fire — everything is burning, waiting to burn, or already ash. One thing overrides that: the First King made destruction feel like purpose instead of entertainment.</p>
         <p>His arrogance is genuine and functional. He is one of the most powerful individual combatants in Ruinea and knows it. What he does not know is how devotion exists without burning, and he has never understood how the First King managed it.</p>
       </section>
-      <section class="sec" id="z-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Obsidian, embers, and torn shadow</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="zargoth-hero" data-fit="contain" data-label="Dragon Form"></div>
-        <p>Fifty metres of obsidian-scaled dragon, scales constantly dripping molten fire that never extinguishes. His wings are like torn shadows, jagged at the edges, vast enough to darken a battlefield. Molten-gold eyes with vertical slit pupils. When irritated he exhales smoke with every word.</p>
-        <p>In humanoid form he still stands two hundred and twenty centimetres, scaled at the collar and wrists, in black ash-stained robes that are always slightly singed.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>50 m / 220 cm</em><em>Molten-gold eyes</em><em>Thermal 1000°C</em><em>Ember trail</em></div>
+      <section class="sec" id="z-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>The one that darkens a battlefield, and the one that fits through a door</h2></div>
+        <p>Two shapes. He uses the second only when a roost is too small or a conversation requires a mouth at eye level.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Dragon Form</button>
+            <button class="forms__tab" type="button">Humanoid Form</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="zargoth-dragon" data-fit="contain" data-label="Dragon Form · 3:4"></div>
+              <div><h4>Obsidian, embers, torn shadow</h4>
+                <p>Fifty metres of obsidian-scaled dragon whose scales constantly drip molten fire that never extinguishes, embers trailing behind him in flight. His wings are like torn shadows, jagged at the edges, vast enough to darken a battlefield. Molten-gold eyes with vertical slit pupils. Horns curve back from the skull, cracked and veined with fire.</p>
+                <p>His jaw hangs slightly open at rest, embers spilling between the teeth. The voice is felt before it is heard — deep, rumbling, grinding stone — and he exhales smoke with every word when irritated.</p>
+                <div class="meta"><em>50 m</em><em>Molten-gold eyes</em><em>Ember trail</em><em>Thermal 1000°C</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="zargoth-humanoid" data-fit="contain" data-label="Humanoid Form · 3:4"></div>
+              <div><h4>Polite, for a volcano</h4>
+                <p>Two hundred and twenty centimetres, towering and broad, obsidian scales visible at the collar and wrists. The eyes stay molten-gold and the cracked black horns still sweep back from the temples, so there is no mistaking what is wearing the robe.</p>
+                <p>He wears simple black ash-stained robes, always slightly singed regardless of how recently they were replaced. The voice is the same grinding rumble, only slightly muffled. His aura reads as standing next to a volcano that has decided to be polite.</p>
+                <div class="meta"><em>≈220 cm</em><em>Scales at collar</em><em>Singed robes</em><em>Voice unchanged</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="zargoth-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">What the sky looks like before it burns</span>
+            <p>He leaves a visible trail of sparks and molten droplets in flight, readable from kilometres away. Stealth in the air is impossible, and he has never once attempted it.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="z-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Arrogant, and correct about it</h2></div>
         <p class="lead">Impatient, territorial, loud when provoked and quiet when satisfied. He never turns his back to anyone he does not trust implicitly.</p>
@@ -1258,11 +1356,56 @@ main{min-width:0;padding-top:30px}
         <p class="lead">She understands the world as information asymmetry. Power is not strength — power is the gap between what you know and what they know.</p>
         <p>The Revisionist Faction exists because stagnation bored her. Not ideology, not morality: she founded it to introduce variables into a predictable system and watch what happens. Every member believes they serve a cause. Vexia serves her own curiosity.</p>
       </section>
-      <section class="sec" id="x-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Absence, wearing a gown</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="vexia-hero" data-fit="contain" data-label="Elite Form · or Lady Violetta"></div>
-        <p>Living purple flames where eyes should be, unblinking, casting a faint violet light on whatever she is looking at. Her hair drips with shadow that moves as if underwater even in still air. Small bat-like wings fold against her back, dark-purple veined with black. She has no horns — a physiological anomaly among Pure Demons that she has never explained.</p>
-        <p>As Lady Violetta the wings vanish, the shadow settles into ordinary locks, the flame dims to amethyst, and she becomes a wealthy widow with a folding fan and a very good memory for names.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈175 cm</em><em>Purple flame eyes</em><em>Bat wings</em><em>No horns</em></div>
+      <section class="sec" id="x-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Four faces, one of them hers</h2></div>
+        <p>The fan is a prop. The shadow is not. Which of the four you meet depends entirely on whether she has decided you are worth the truth.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Lady Violetta</button>
+            <button class="forms__tab" type="button">Partial Shadow</button>
+            <button class="forms__tab" type="button">Full Darkness</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="vexia-elite" data-fit="contain" data-label="Elite Form · 3:4"></div>
+              <div><h4>Absence, wearing a gown</h4>
+                <p>Living purple flames where eyes should be, unblinking, casting a faint violet light on whatever she is looking at. Long dark-purple hair drips with living shadow — the strands move as if underwater even in still air, and the darkness around her hairline is several shades deeper than ambient.</p>
+                <p>Small delicate bat-like wings fold against her back, dark-purple veined with black. She has no horns, a physiological anomaly among Pure Demons that she has never explained and nobody has asked about twice. Her aura reads as absence: sound dampens within two metres, and peripheral vision loses track of her edges.</p>
+                <div class="meta"><em>≈175 cm</em><em>Purple flame eyes</em><em>Bat wings</em><em>No horns</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-violetta" data-fit="contain" data-label="Lady Violetta · 3:4"></div>
+              <div><h4>The widow with the fan</h4>
+                <p>The wings vanish. The shadow in her hair settles into ordinary dark-purple locks, the flame dims to deep amethyst, and the aura suppresses to social-norm levels. Luxurious violet-and-black silk, lace elbow-gloves, and a folding fan — black on one side, deep violet on the other.</p>
+                <p>She reads as a wealthy mortal noblewoman with a very good memory for names. She laughs easily and genuinely, touches people's arms when making a point, and bites her lower lip when pretending to think. The room is won within minutes.</p>
+                <div class="meta"><em>Mortal-passing</em><em>Fan: black / violet</em><em>Aura suppressed</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-partial" data-fit="contain" data-label="Partial Shadow Manifestation · 3:4"></div>
+              <div><h4>Bleeding into the dark</h4>
+                <p>Individual elements overflow into pure shadow. Her hair extends into tendrils of living darkness that move independently; her hands become silhouettes of solidified shadow, fingertips trailing wisps; her eyes become voids with purple flame burning deep inside.</p>
+                <p>Shadows within fifty metres respond to her will without contact. She maintains full consciousness and full social composure throughout — the smile never changes, which is the part that unsettles people.</p>
+                <div class="meta"><em>Shadow reach 50 m</em><em>Composure intact</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-monstrous" data-fit="contain" data-label="Full Darkness Manifestation · 3:4"></div>
+              <div><h4>Night, given a shape</h4>
+                <p>A humanoid silhouette of absolute darkness, edges dissolving and reforming, cut from the fabric of night itself. The face is a smooth void with two points of purple flame. Bat-like wings expand to a twelve-metre span, layered shadow that drinks light rather than blocking it.</p>
+                <p>She generates a field of darkness within one hundred metres where all light dies, sound ceases, and spatial perception collapses for Tier 6 and below. Her aura registers as the dark between stars given form — primordial, patient, ancient. She finds the shape crude, because darkness is most effective when it is invisible.</p>
+                <div class="meta"><em>≈250 cm</em><em>12 m span</em><em>Lightless field 100 m</em><em>Rarely used</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="vexia-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The shadow that does not match</span>
+            <p>Her illusions cast no shadow of their own. It is the only tell she has ever left behind, and it is visible solely to people who already know to look for a missing shape on the floor.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="x-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Cruel without malice</h2></div>
         <p class="lead">Insatiably curious, endlessly patient, and bored the way other people are hungry. She collects secrets the way others collect coins.</p>
@@ -1372,11 +1515,47 @@ main{min-width:0;padding-top:30px}
         <p class="lead">She does not view cruelty as cruelty. Disassembly is research, and desire is her sharpest tool — fear builds walls, but desire makes people open the door themselves.</p>
         <p>Born monstrous and instinct-heavy, she catalogued demon behaviour for centuries until no variation remained. Then humans broke her framework: afraid and advancing anyway, weeping over enemies, loving people who hurt them. So she stopped killing them quickly.</p>
       </section>
-      <section class="sec" id="s-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Symmetry that registers as wrong</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="silphira-hero" data-fit="contain" data-label="Elite Form"></div>
-        <p>Pale white skin faintly luminous in low light. Black pupil-less eyes that reflect nothing. Four moth wings folded at rest — velvety deep purple and black, with iridescent eyespots that shift when not directly observed. Prolonged gaze produces mild euphoria and suggestibility in Tier 5 and below.</p>
-        <p>She wears a simple black and white high-collared dress, a gift from Nuva, and soft-soled shoes. Her aura reads as warmth and invitation — the pull of food when hungry, of laughter in an empty house.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈180 cm</em><em>Four moth wings</em><em>Pupil-less eyes</em><em>Desire aura 50 m</em></div>
+      <section class="sec" id="s-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Built by observation</h2></div>
+        <p>Born monstrous, her form restructured itself over millennia around the shapes she watched most. Beauty calibrated to attract, wrongness calibrated to unsettle. The flame moths cannot resist.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Partial Wing Unfurl</button>
+            <button class="forms__tab" type="button">Full Manifestation</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="silphira-elite" data-fit="contain" data-label="Elite Form · 3:4"></div>
+              <div><h4>Symmetry that registers as wrong</h4>
+                <p>Pale white skin, faintly luminous in low light. Black pupil-less eyes that reflect nothing. The face is sharp and angular — high cheekbones, pointed chin, narrow nose — arranged with a symmetry that reads as <em>wrong</em> on instinct: too smooth, too inviting.</p>
+                <p>Four moth wings folded at rest, velvety deep purple and black, with iridescent eyespots that shift when not directly observed. She wears a simple black and white high-collared dress — a gift from Nuva — and soft-soled shoes. Her aura reads as warmth and invitation: the pull of food when hungry, of laughter in an empty house.</p>
+                <div class="meta"><em>≈180 cm</em><em>Pupil-less eyes</em><em>Four moth wings</em><em>Desire aura 50 m</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="silphira-wings" data-fit="contain" data-label="Partial Wing Unfurl · 3:4"></div>
+              <div><h4>The pattern, fully visible</h4>
+                <p>Wings spread to three metres, the full hypnotic pattern on display, eyespots glowing faintly and releasing psychoactive dust into a twenty-metre radius. The head tilts like a predator watching prey approach voluntarily.</p>
+                <p>Her aura shifts from subtle pull to active desire. Loneliness becomes desperate need, anger becomes consuming rage, affection becomes obsession. Her composure holds completely — the smile constant, the posture unhurried, the voice still sweet.</p>
+                <div class="meta"><em>3 m span</em><em>Dust 20 m</em><em>Composure intact</em></div>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="silphira-monstrous" data-fit="contain" data-label="Full Succubus Manifestation · 3:4"></div>
+              <div><h4>Maximum attraction, maximum wrongness</h4>
+                <p>Two hundred and fifty centimetres, elongated and inhuman, curves and angles arranged for both attraction and wrongness at once. The skin turns faintly translucent, bioluminescent violet veins pulsing like a heartbeat. Four wings reach a twelve-metre span, and each eyespot becomes a miniature psychic construct that moves and blinks on its own. Six smaller wings sprout from the lower back, vibrating at frequencies that disrupt higher thought.</p>
+                <p>The face is a mask, shifting to match whatever the observer finds most attractive — every person sees a different one. Her aura becomes psychic gravity within one hundred metres. Tier 6 and below lose motor control within thirty metres; Tier 7+ suffer compulsive fascination and lose a fifth of their combat effectiveness.</p>
+                <div class="meta"><em>≈250 cm</em><em>12 m span</em><em>Face shifts per observer</em><em>Gravity 100 m</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="silphira-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The eyespots watch back</span>
+            <p>Prolonged gaze at the wing patterns produces mild euphoria and suggestibility in Tier 5 and below. The eyespots shift when unobserved, which means the pattern on her wings is never the same twice — a detail no one has survived confirming.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="s-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Cheerful in the way of things without frameworks</h2></div>
         <p class="lead">Warm in delivery and cold in intent. Fascinated by minds that resist, bored by minds that break quickly, easily distracted by complexity.</p>
@@ -1489,11 +1668,18 @@ main{min-width:0;padding-top:30px}
         <p class="lead">She processes existence as architecture — spaces, gaps, distances, load points. She reads rooms the way other people read faces, finding the holes instinctively.</p>
         <p>Her self-concept is defined entirely by function: Azalea's shadow, Azalea's blade, Azalea's silence. Purpose is presence. To be somewhere is to matter; to leave is to cease. This is why she has never stepped through a dimensional gap to <em>leave</em>, only to hide.</p>
       </section>
-      <section class="sec" id="n-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Immaculate, and utterly forgettable</h2></div>
-        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin-bottom:20px" data-img="nuva-hero" data-fit="contain" data-label="Elite Form"></div>
-        <p>Slender and willowy, pale-bone skin flawless and cool. Short white hair, clean-cut and swept slightly left. Tiny curved ram horns, dark-grey, barely visible above the hairline. Silver eyes, flat and unreadable. She wears immaculate black-and-white maid attire — long dress, crisp apron, high collar, never wrinkled — and soft-soled shoes that make no sound.</p>
-        <p>Her aura sits at near-zero baseline. It registers only as a faint wrongness at the edge of vision, a sense that the space she occupies is slightly thinner than it should be.</p>
-        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈175 cm</em><em>Silver eyes</em><em>Ram horns</em><em>Aura: near-zero</em></div>
+      <section class="sec" id="n-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>One form, held for four thousand years</h2></div>
+        <p>The second exists. She has never opened it. Not once since the day Azarin and Kalea died — the refusal is her final act of respect to the only parents she knew.</p>
+        <div class="ph" style="aspect-ratio:3/4;max-width:230px;margin:0 0 22px" data-img="nuva-elite" data-fit="contain" data-label="Elite Form · the only one she wears"></div>
+        <p>Slender and willowy with a modest chest, narrow waist, and long limbs. Pale-bone skin, flawless and cool. Short white hair, clean-cut and swept slightly left. Tiny curved ram horns, dark-grey, barely visible above the hairline. Silver eyes, flat and unreadable. She wears immaculate black-and-white maid attire — long dress, crisp white apron, high collar, never wrinkled — and soft-soled shoes that make no sound.</p>
+        <p>Her aura sits at near-zero baseline. It registers only as a faint wrongness at the edge of vision, a sense that the space she occupies is slightly thinner than it should be. Twin matte-black daggers rest sheathed beneath the apron on each hip; they are never drawn in public. A small wooden hairpin carved by Kalea is tucked under her hair and has never been removed.</p>
+        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px"><em>≈175 cm</em><em>Silver eyes</em><em>Ram horns</em><em>Aura: near-zero</em><em>Kalea's hairpin</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="nuva-plate" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The door she has never opened</span>
+            <p>The monstrous potential is still inside her, locked and untested. She does not know whether it is sealed or whether she is simply holding it shut, and she has never asked herself which — because the answer might require opening it to find out.</p>
+          </figcaption>
+        </figure>
       </section>
       <section class="sec" id="n-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Grief in maintenance</h2></div>
         <p class="lead">She grieves by polishing the hairpin, preparing Azalea's food, and standing slightly outside the room. The grief has no language because she lost her language for feeling when she lost them.</p>
@@ -1571,14 +1757,10 @@ main{min-width:0;padding-top:30px}
 </div>
 
 <script>
-/* ═══ AUTO IMAGE LOADER ═══
-   Taruh file di /assets/ dengan nama sesuai data-img.
-   Format yang dicoba berurutan: .webp .png .jpg .jpeg
-   Kalau tidak ada yang ketemu, placeholder tetap tampil. */
+/* ═══ AUTO IMAGE LOADER ═══ */
 (function(){
   const EXT = ['webp','png','jpg','jpeg'];
   document.querySelectorAll('.ph[data-img]').forEach(ph => {
-    /* label fallback */
     if (ph.dataset.label) {
       const s = document.createElement('span');
       s.innerHTML = ph.dataset.label;
@@ -1595,7 +1777,6 @@ main{min-width:0;padding-top:30px}
     img.onerror = () => { i++; if (i < EXT.length) img.src = base + '.' + EXT[i]; };
     img.src = base + '.' + EXT[0];
   });
-  /* isi avatar sidebar dari potret yang sama */
   document.querySelectorAll('.roster .av').forEach(av => {
     const link = av.closest('a');
     const id = link && link.dataset.view;
@@ -1606,6 +1787,18 @@ main{min-width:0;padding-top:30px}
     im.onload = () => { av.appendChild(im); };
   });
 })();
+
+/* ═══ FORM TABS ═══ */
+document.addEventListener('click', e => {
+  const tab = e.target.closest('.forms__tab');
+  if (!tab) return;
+  const box = tab.closest('[data-forms]');
+  const tabs = [...box.querySelectorAll('.forms__tab')];
+  const idx = tabs.indexOf(tab);
+  tabs.forEach((t,i) => t.classList.toggle('is-active', i === idx));
+  box.querySelectorAll('.forms__panels > .panel')
+     .forEach((p,i) => p.classList.toggle('is-active', i === idx));
+});
 
 /* ═══ ROUTER ═══ */
 const TITLES = {roster:'Commanders',azalea:'Azalea',vorlag:'Vorlag',kazagar:'Kazagar',
@@ -1630,4 +1823,4 @@ document.addEventListener('click', e => {
 go('roster');
 </script>
 </body>
-</html>
+                                                                                                                                                                    </html>
