@@ -1,0 +1,49 @@
+name: Sync Capabilities Block
+
+# Patch sekali jalan: samakan blok Capabilities semua karakter dengan Azalea
+# (banner 16:9 + heading "Signature capabilities").
+# Workflow ini bisa dihapus setelah dijalankan.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-capabilities.yml'
+      - '.github/scripts/sync_capabilities.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-capabilities
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch index.html
+        run: python3 .github/scripts/sync_capabilities.py
+
+      - name: Commit hasil
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add index.html
+
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan untuk di-commit."
+            exit 0
+          fi
+
+          git commit -m "feat(index): banner 16:9 + heading Signature capabilities untuk semua karakter [skip ci]"
+          git push
