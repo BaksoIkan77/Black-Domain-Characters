@@ -21,12 +21,7 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box;min-width:0}
 img,svg,video{max-width:100%;height:auto}
 body{margin:0;overflow-wrap:break-word;
-  background:
-    radial-gradient(120% 70% at 50% -12%,rgba(126,22,48,.42) 0%,rgba(126,22,48,.16) 34%,transparent 66%),
-    radial-gradient(80% 70% at 88% 0%,rgba(58,24,88,.30) 0%,transparent 62%),
-    linear-gradient(180deg,#1b1015 0%,#150d11 16%,#0f090c 38%,#0a0708 62%,#070506 100%);
-  background-repeat:no-repeat;
-  background-color:var(--bg);
+  background:radial-gradient(90% 60% at 50% -10%,#1a0d13 0%,transparent 60%),var(--bg);
   color:var(--ink);font:400 16px/1.72 var(--sans);-webkit-font-smoothing:antialiased}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.03;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -55,9 +50,19 @@ a{color:inherit}
 .topbar__right a:hover{color:var(--garnet)}
 
 /* ═══ HERO — potret besar, terpusat ═══ */
-.hero{position:relative;overflow:hidden;background:transparent}
-.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:70%;
-  background:linear-gradient(180deg,transparent 0%,rgba(140,30,55,.10) 45%,transparent 100%);pointer-events:none}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft);
+  background:
+    radial-gradient(110% 80% at 50% 0%,rgba(126,22,48,.48),transparent 62%),
+    radial-gradient(80% 110% at 88% 8%,rgba(58,24,88,.38),transparent 66%),
+    linear-gradient(180deg,#180e12 0%,#0a0708 88%)}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;
+  background:linear-gradient(180deg,transparent,rgba(140,30,55,.10));pointer-events:none}
+/* landing (grid): hero melebur ke latar, tanpa garis potong */
+#view-roster .hero{border-bottom:0;background:
+  radial-gradient(120% 80% at 50% -10%,rgba(126,22,48,.45) 0%,rgba(126,22,48,.14) 36%,transparent 70%),
+  radial-gradient(80% 80% at 88% 0%,rgba(58,24,88,.32) 0%,transparent 62%),
+  linear-gradient(180deg,rgba(27,16,21,.88) 0%,rgba(21,13,17,.55) 38%,rgba(10,7,8,0) 100%)}
+#view-roster .hero::before{background:linear-gradient(180deg,transparent 0%,rgba(140,30,55,.10) 45%,transparent 100%)}
 .hero__in{position:relative;max-width:var(--maxw);margin:0 auto;padding:54px 28px 46px;
   display:grid;grid-template-columns:1fr;justify-items:center;gap:28px;text-align:center}
 .hero__in--wide{justify-items:start;text-align:left;max-width:920px;gap:0}
