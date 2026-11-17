@@ -2,8 +2,9 @@
 """
 Perbarui bar stat (Pillar Distribution) untuk Gorath, Nuva, Alleen, Vexia.
 
-Setiap bar ditulis ulang lengkap per section: lebar (--v) dihitung otomatis
-dari nilainya (8.5 -> 85%), supaya chart dan angka selalu sinkron.
+Setiap blok .stats ditulis ulang lengkap per section: lebar (--v) dihitung
+otomatis dari nilainya (8.5 -> 85%), supaya chart dan angka selalu sinkron.
+Indentasi juga dinormalkan (8 spasi untuk <div class="stats">).
 Idempoten: aman dijalankan berulang.
 """
 
@@ -19,6 +20,8 @@ VALUES = {
     "a": ("alleen", [("STR", "7.2"), ("SPD", "7.2"), ("DUR", "7.0"), ("STA", "7.5"), ("MAG", "8.6")]),
     "x": ("vexia", [("STR", "6.7"), ("SPD", "7.5"), ("DUR", "6.1"), ("STA", "7.0"), ("MAG", "7.8")]),
 }
+
+STATS_RE = re.compile(r'^[ \t]*<div class="stats">.*?\n[ \t]*</div>', re.S | re.M)
 
 
 def pct(value: str) -> int:
@@ -51,13 +54,7 @@ def main() -> int:
             continue
 
         window = m.group(0)
-        new_window, count = re.subn(
-            r'<div class="stats">.*?\n        </div>',
-            build_block(rows),
-            window,
-            count=1,
-            flags=re.S,
-        )
+        new_window, count = STATS_RE.subn(build_block(rows), window, count=1)
         if count != 1:
             problems.append(f"{name}: blok .stats tidak ditemukan")
             continue
