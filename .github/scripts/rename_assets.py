@@ -11,7 +11,14 @@ import subprocess
 from pathlib import Path
 
 RENAMES = [
-    ("assets/allen-partial.webp", "assets/alleen-partial.webp"),
+    # salah ketik: apostrof tidak boleh ada di nama file
+    ("assets/zar'goth-ability.webp", "assets/zargoth-ability.webp"),
+    ("assets/zar'goth-cinematic.webp", "assets/zargoth-cinematic.webp"),
+    ("assets/zar'goth-dragon.webp", "assets/zargoth-dragon.webp"),
+    ("assets/zar'goth-grid.webp", "assets/zargoth-grid.webp"),
+    ("assets/zar'goth-hero.webp", "assets/zargoth-hero.webp"),
+    ("assets/zar'goth-humanoid.webp", "assets/zargoth-humanoid.webp"),
+    ("assets/zar'goth-roster.webp", "assets/zargoth-roster.webp"),
 ]
 
 
