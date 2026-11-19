@@ -361,6 +361,9 @@ main{min-width:0;padding-top:30px}
 .cmd-scroll .cmd{flex:0 0 200px;scroll-snap-align:start}
 @media (max-width:900px){.cmd-scroll .cmd{flex:0 0 160px}
   .cmd-scroll{padding:4px 20px 16px}}
+/* ═══ CAROUSEL FIX: tinggi placeholder ═══ */
+.cmd-scroll .cmd .ph{aspect-ratio:3/4;width:100%}
+.cmd-scroll .cmd--lead .ph{aspect-ratio:3/4}
 
 </style>
 </head>
@@ -727,6 +730,13 @@ main{min-width:0;padding-top:30px}
       ph.appendChild(s);
     }
     const base = 'assets/' + ph.dataset.img;
+    // daftar kandidat: semua ekstensi untuk basename, lalu fallback -roster
+    const alts = [];
+    for (const e of EXT) alts.push(base + '.' + e);
+    if (/-grid$/.test(ph.dataset.img)) {
+      const rb = base.replace(/-grid$/, '-roster');
+      for (const e of EXT) alts.push(rb + '.' + e);
+    }
     const img = new Image();
     img.alt = ph.dataset.alt || '';
     img.decoding = 'async';
@@ -736,10 +746,10 @@ main{min-width:0;padding-top:30px}
     img.onload = () => { ph.classList.add('has-img'); };
     img.onerror = () => {
       i++;
-      if (i < EXT.length) img.src = base + '.' + EXT[i];
+      if (i < alts.length) img.src = alts[i];
       else img.remove();
     };
-    img.src = base + '.' + EXT[0];
+    img.src = alts[0];
     ph.prepend(img);
     img.loading = 'lazy';
   });
