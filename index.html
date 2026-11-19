@@ -7,6 +7,7 @@
 <title>Codex of Ruinea — The Black Domain</title>
 <style>
 
+
 /* ═══ TOKENS ═══ */
 :root{
   --bg:#0a0708; --panel:#140e11; --panel-2:#1a1216;
@@ -360,6 +361,7 @@ main{min-width:0;padding-top:30px}
 .cmd-scroll .cmd{flex:0 0 200px;scroll-snap-align:start}
 @media (max-width:900px){.cmd-scroll .cmd{flex:0 0 160px}
   .cmd-scroll{padding:4px 20px 16px}}
+
 </style>
 </head>
 <body>
@@ -389,68 +391,17 @@ main{min-width:0;padding-top:30px}
       </div>
     </div>
   </header>
-  <div class="wrap">
-    <div class="view" id="view-roster">
-  <header class="hero">
-    <div class="hero__in hero__in--wide">
-      <div>
-        <p class="eyebrow">The Black Domain · Malakh-Kar</p>
-        <h1 class="sm">The Commanders</h1>
-        <p class="hero__tag">
-          One sovereign, eight commanders, and a hierarchy arranged as a weapon. The radicals
-          hold the frontier and receive honour, danger, and the dying. The loyalists hold the
-          interior and receive food, roads, and the supply belt. Every one of them can see
-          exactly what that arrangement means.
-        </p>
-      </div>
-    </div>
-  </header>
-  <div class="wrap">
+  <div class="wrap" style="padding-bottom:40px">
     <div class="cmd-scroll">
       <a class="cmd cmd--lead" href="commander.html#azalea"><div class="ph" data-img="azalea-grid" data-fit="cover" data-alt="Azalea"></div>
-        <div class="cmd__body"><div class="cmd__name">Azalea</div><div class="cmd__title">The Unraveler</div>
-        <div class="cmd__meta"><span>Malakh-Kar</span><b>8.9</b></div></div></a>
-
-      <a class="cmd" href="commander.html#vorlag"><div class="ph" data-img="vorlag-grid" data-fit="cover" data-alt="Vorlag"></div>
-        <div class="cmd__body"><div class="cmd__name">Vorlag</div><div class="cmd__title">The Night King</div>
-        <div class="cmd__meta"><span>Nightreach</span><b>8.7</b></div></div></a>
-
-      <a class="cmd" href="commander.html#kazagar"><div class="ph" data-img="kazagar-grid" data-fit="cover" data-alt="Kazagar"></div>
-        <div class="cmd__body"><div class="cmd__name">Kazagar</div><div class="cmd__title">The Molten Heart</div>
-        <div class="cmd__meta"><span>Emberhold</span><b>8.7</b></div></div></a>
-
-      <a class="cmd" href="commander.html#gorath"><div class="ph" data-img="gorath-grid" data-fit="cover" data-alt="Gorath"></div>
-        <div class="cmd__body"><div class="cmd__name">Gorath</div><div class="cmd__title">The Unstoppable</div>
-        <div class="cmd__meta"><span>Stonefall</span><b>8.7</b></div></div></a>
-
-      <a class="cmd" href="commander.html#alleen"><div class="ph" data-img="alleen-grid" data-fit="cover" data-alt="Alleen"></div>
-        <div class="cmd__body"><div class="cmd__name">Alleen</div><div class="cmd__title">The Serene</div>
-        <div class="cmd__meta"><span>Verathiel</span><b>8.6</b></div></div></a>
-
-      <a class="cmd" href="commander.html#zargoth"><div class="ph" data-img="zargoth-grid" data-fit="cover" data-alt="Zar'goth"></div>
-        <div class="cmd__body"><div class="cmd__name">Zar'goth</div><div class="cmd__title">The Sky-Scorcher</div>
-        <div class="cmd__meta"><span>The Aeries</span><b>8.0</b></div></div></a>
-
-      <a class="cmd" href="commander.html#vexia"><div class="ph" data-img="vexia-grid" data-fit="cover" data-alt="Vexia"></div>
-        <div class="cmd__body"><div class="cmd__name">Vexia</div><div class="cmd__title">The Quiet Broker</div>
-        <div class="cmd__meta"><span>Silkhaven</span><b>7.8</b></div></div></a>
-
-      <a class="cmd" href="commander.html#silphira"><div class="ph" data-img="silphira-grid" data-fit="cover" data-alt="Silphira"></div>
-        <div class="cmd__body"><div class="cmd__name">Silphira</div><div class="cmd__title">The Whisper</div>
-        <div class="cmd__meta"><span>Vaelthorn</span><b>7.7</b></div></div></a>
-
-      <a class="cmd" href="commander.html#nuva"><div class="ph" data-img="nuva-grid" data-fit="cover" data-alt="Nuva"></div>
-        <div class="cmd__body"><div class="cmd__name">Nuva</div><div class="cmd__title">The Shadow That Answers</div>
-        <div class="cmd__meta"><span>No Territory</span><b>7.6</b></div></div></a>
-    </div>
-  </div>
-</div>
   </div>
 </div>
 
 <!-- ══════════ THE BLACK DOMAIN ══════════ -->
-<div class="wrap" style="padding-top:0">
-  <nav class="toc" style="margin:0 0 28px"><ol>
+<div class="layout">
+  <aside class="side">
+    <h2>Contents</h2>
+    <nav class="toc"><ol>
       <li><a href="#bd-overview"><i>01</i>Overview &amp; Culture</a></li>
       <li><a href="#bd-history"><i>02</i>History</a></li>
       <li><a href="#bd-geography"><i>03</i>Geography</a></li>
@@ -463,7 +414,17 @@ main{min-width:0;padding-top:30px}
       <li><a href="#bd-settlement"><i>10</i>Settlement Pattern</a></li>
       <li><a href="#bd-borders"><i>11</i>Borders</a></li>
     </ol></nav>
-  <section class="sec" id="bd-overview">
+  </aside>
+  <main>
+    <section class="sec" id="bd-intro" style="padding-top:0">
+      <div class="sec__head">
+        <span class="sec__kick">Codex of Ruinea</span>
+        <h1 class="sm" style="font:400 clamp(30px,5.4vw,56px)/.96 var(--serif);letter-spacing:-.02em;color:#f4ecea;margin:0">The Black Domain</h1>
+      </div>
+      <div class="ph ph--wide" style="margin-bottom:28px" data-img="blackdomain-hero" data-fit="cover" data-label="The western wasteland · 16:9"></div>
+    </section>
+
+    <section class="sec" id="bd-overview">
         <div class="sec__head"><span class="sec__kick">The Black Domain</span><h2>Overview &amp; Culture</h2></div>
         <div class="ph ph--wide" style="margin-bottom:28px" data-img="blackdomain-hero" data-fit="cover" data-label="The western wasteland · 16:9"></div>
         <p class="lead">A demon nation built on a wound. The Black Domain occupies the western wasteland where the largest battlefield of the Primordial War poisoned the soil beyond recovery — black earth, no agriculture, no mineral wealth, and a sky locked in deep red or dark purple. The nation survives entirely on what it kills.</p>
@@ -718,13 +679,13 @@ main{min-width:0;padding-top:30px}
         </div>
         <p>The Black Domain has exactly two land borders: Gar-Vang in the northeast and the Theocracy along the eastern crescent.</p>
       </section>
+  </main>
 </div>
 
 <script>
 /* ═══ AUTO IMAGE LOADER ═══ */
 (function(){
   const EXT = ['webp','png','jpg','jpeg'];
-
   document.querySelectorAll('.ph[data-img]').forEach(ph => {
     if (ph.dataset.label) {
       const s = document.createElement('span');
@@ -737,7 +698,6 @@ main{min-width:0;padding-top:30px}
     img.decoding = 'async';
     img.style.objectFit = ph.dataset.fit || 'cover';
     img.style.objectPosition = ph.dataset.pos || 'center';
-
     let i = 0;
     img.onload = () => { ph.classList.add('has-img'); };
     img.onerror = () => {
@@ -746,26 +706,10 @@ main{min-width:0;padding-top:30px}
       else img.remove();
     };
     img.src = base + '.' + EXT[0];
-
-    ph.prepend(img);        /* masuk DOM dulu */
-    img.loading = 'lazy';   /* baru boleh lazy */
-  });
-
-  /* avatar strip sidebar */
-  document.querySelectorAll('.roster .av').forEach(av => {
-    const link = av.closest('a');
-    const id = link && link.dataset.view;
-    if (!id) return;
-    const base = 'assets/' + id + '-roster';
-    const im = new Image();
-    let i = 0;
-    im.onerror = () => { i++; if (i < EXT.length) im.src = base + '.' + EXT[i]; else im.remove(); };
-    im.onload = () => { av.appendChild(im); };
-    im.src = base + '.' + EXT[0];
+    ph.prepend(img);
+    img.loading = 'lazy';
   });
 })();
-
-
 </script>
 </body>
 </html>
