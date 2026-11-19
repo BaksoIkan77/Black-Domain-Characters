@@ -1737,7 +1737,9 @@ main{min-width:0;padding-top:30px}
   /* avatar strip sidebar */
   document.querySelectorAll('.roster .av').forEach(av => {
     const link = av.closest('a');
-    const id = link && link.dataset.view;
+    const href = link && (link.getAttribute('href') || '');
+    const m = href && href.match(/#(\w+)$/);
+    const id = m && m[1];
     if (!id) return;
     const base = 'assets/' + id + '-roster';
     const im = new Image();
