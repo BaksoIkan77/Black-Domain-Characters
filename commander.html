@@ -7,7 +7,6 @@
 <title>Commander — Codex of Ruinea</title>
 <style>
 
-
 /* ═══ TOKENS ═══ */
 :root{
   --bg:#0a0708; --panel:#140e11; --panel-2:#1a1216;
@@ -350,19 +349,6 @@ main{min-width:0;padding-top:30px}
   .infobox dt{padding-top:0}
 }
 
-
-/* ═══ CAROUSEL (horizontal scroll) ═══ */
-.cmd-scroll{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding:4px 28px 20px;scrollbar-width:thin;
-  scrollbar-color:var(--line) transparent}
-.cmd-scroll::-webkit-scrollbar{height:6px}
-.cmd-scroll::-webkit-scrollbar-track{background:transparent}
-.cmd-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
-.cmd-scroll .cmd{flex:0 0 200px;scroll-snap-align:start}
-@media (max-width:900px){.cmd-scroll .cmd{flex:0 0 160px}
-  .cmd-scroll{padding:4px 20px 16px}}
-
-
 </style>
 </head>
 <body>
@@ -370,17 +356,1411 @@ main{min-width:0;padding-top:30px}
 <div class="topbar">
   <div class="topbar__in">
     <b>Codex of Ruinea</b><span class="sep">/</span>
-    <a class="cur" data-view="roster">The Black Domain</a>
+    <a class="cur" href="index.html">The Black Domain</a>
     <span class="sep">/</span>
     <span class="cur" id="crumb">Commanders</span>
-    <div class="topbar__right"><a data-view="roster">Commanders</a><a href="#">Atlas</a><a href="#">Timeline</a></div>
+    <div class="topbar__right"><a href="index.html">Commanders</a><a href="#">Atlas</a><a href="#">Timeline</a></div>
   </div>
 
+<!-- ══════════ AZALEA ══════════ -->
+<div class="view" id="view-azalea" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="azalea-hero" data-fit="cover" data-label="Hero portrait · Elite Form · 3:4"></div></div>
+    <div>
+      <p class="eyebrow">Supreme Sovereign · Malakh-Kar</p>
+      <h1>Azalea</h1>
+      <p class="hero__tag">She holds the throne the way a hand holds a door shut. First of the True Demons, sixty-two thousand years old, and the only thing in Ruinea strong enough to keep her own race from deciding what happens next.</p>
+      <ul class="chips"><li class="is-accent">The Unraveler</li><li>True Demon · Elite Path</li><li>Tier 8.9</li><li>First Generation</li></ul>
+    </div>
+  </div></header>
 
+  <div class="layout">
+    <aside class="side">
+      <h2>Contents</h2>
+      <nav class="toc"><ol>
+        <li><a href="#overview"><i>01</i>Overview</a></li>
+        <li><a href="#appearance"><i>02</i>Appearance</a></li>
+        <li><a href="#faces"><i>03</i>Three Faces</a></li>
+        <li><a href="#voice"><i>04</i>Voice</a></li>
+        <li><a href="#capabilities"><i>05</i>Capabilities</a></li>
+        <li><a href="#history"><i>06</i>History</a></li>
+        <li><a href="#keepsakes"><i>07</i>Keepsakes</a></li>
+        <li><a href="#relations"><i>08</i>Relationships</a></li>
+        <li><a href="#truths"><i>09</i>Truths</a></li>
+      </ol></nav>
+      <nav class="roster"><h2>Commanders</h2><ol>
+        <li><a href="commander.html#azalea" aria-current="page"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+        <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+        <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+        <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+        <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+        <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+        <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+        <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+        <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+      </ol></nav>
+    </aside>
+
+    <main>
+      <section class="sec" id="overview">
+        <div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The chain that binds</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>True Name</dt><dd><b>Azalea</b> — spoken only by Nuva</dd></div>
+          <div><dt>Aliases</dt><dd>Shara · the Unraveler</dd></div>
+          <div><dt>Role</dt><dd>Supreme Sovereign</dd></div>
+          <div><dt>Age</dt><dd>≈ 62,000 yrs</dd></div>
+          <div><dt>Race</dt><dd>True Demon, Elite Path</dd></div>
+          <div><dt>Tier</dt><dd><b>8.9</b> · Ruler</dd></div>
+          <div><dt>Seat</dt><dd>Malakh-Kar, the Core</dd></div>
+          <div><dt>Status</dt><dd>Reigning</dd></div>
+        </dl></aside>
+        <p class="lead">Her subjects call her the Unraveler, and they do not say it loudly. Strangers call her Shara — a grey wanderer in bare feet who asks what the sugar on the pastries is called. Both names are correct. Neither is the whole of it.</p>
+        <p>Azalea was built to win a war her creator invented, and spent twenty thousand years doing exactly that with a craftsman's distaste for waste. What changed her was a human family who chose exile over killing a demon child, and a goddess's mandate that suddenly felt very thin.</p>
+        <p>Today she rules a nation that exists to prepare for an apocalypse she knows is a fiction. She restrains the frontier commanders who would burn the world to feel something, and quietly collects pastries in a fortress built over a sleeping king. Every act of mercy she commits reads, from the border, exactly like betrayal.</p>
+      </section>
+
+      <section class="sec" id="appearance">
+        <div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Three bodies, one occupant</h2></div>
+        <p>She keeps three forms, and which one you meet decides how long you have to describe it. The elite body is what the Council sees. The grey one is what the world sees. The third is what survives the meeting.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Heavy Suppression · Shara</button>
+            <button class="forms__tab" type="button">Demon King</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="azalea-elite" data-fit="cover" data-label="Elite Form · 3:4"></div>
+              <h4>The aristocratic shape</h4>
+              <p>Tall and pale as cut moonstone, built long and narrow — a body designed for economy of motion and nothing else. The face reads aristocratic before it reads beautiful: high cheekbones, a jaw with an edge, a full mouth that has forgotten how to smile without deciding to.</p>
+              <p>Her eyes are garnet, the pupils vertical slits, and she blinks less often than she should. Two black-violet horns sweep back from her temples. A slender draconic tail runs below her knee and moves with opinions of its own. <strong>Between her shoulder blades, two scarred ridges sit where wings used to be.</strong></p>
+              <p>Her aura arrives before she does. Any combatant above Tier 5 can read the magnitude precisely, and will spend the rest of the conversation trying to forget the number.</p>
+              <div class="meta"><em>≈175 cm</em><em>Garnet eyes</em><em>Slit pupils</em><em>Horns retractable</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="azalea-shara" data-fit="cover" data-label="Shara · suppressed form · 3:4"></div>
+              <h4>The grey wanderer</h4>
+              <p>The same body under three layers of camouflage. Weathered grey-brown skin, a plain round face with soft edges, dull brown eyes, matted hair under a hood. She walks barefoot and slowly, and every step looks like the first one anyone has ever taken on that road.</p>
+              <p>The tail is bound flat under layered cloth. The horns are retracted — an effort she maintains every second of every hour, and one that flickers when she is tired, surprised, or moved. Her aura is compressed to almost nothing: a human sees a human, a low-tier demon sees a drifter.</p>
+              <p>Hold the form past forty-eight hours and the nosebleeds start. Past that, the whispers behind her own ears.</p>
+              <div class="meta"><em>≈168 cm</em><em>Aura: near-zero</em><em>Bare feet</em><em>48h limit</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="azalea-king" data-fit="cover" data-label="Demon King · 3:4"></div>
+              <h4>The armour that is not armour</h4>
+              <p>When she stops being polite, her body grows an exoskeleton in three seconds: angular organic plate, black threaded with crimson, seamless and alive, closing over her with no gaps at all. The silhouette loses its gender. The face becomes a featureless helm with a faint red glow behind the slits.</p>
+              <p>The slender tail splits into a jointed, thorned spear. A greatsword of dried blood pulls itself out of the air into her right hand. She stands a head taller than the woman she was.</p>
+              <p>Within fifty metres the air thickens, sound goes flat, and anything below Tier 4 feels its own chest tighten without knowing why.</p>
+              <div class="meta"><em>≈200 cm</em><em>Magic null &lt; Circle 7</em><em>Void aura 50 m</em><em>3-second shift</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="azalea-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The mark no one else carries</span>
+            <p>Two scarred ridges between the shoulder blades, cut away by her own hand and carried through every form she wears. She reaches back to touch them while thinking — the way other people check a pocket for keys.</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="sec" id="faces">
+        <div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Three voices, one mind</h2></div>
+        <p class="lead">She is not a woman with a mask. She is a woman who has worn the mask long enough that both faces report for duty.</p>
+        <h3>Private · the sovereign</h3>
+        <p>Stoic, deliberate, quietly warm and visibly embarrassed about it. She sits on the floor instead of chairs. She traces the edges of maps with one finger, following roads she will never take. She eats slowly, with her eyes closed, and alone — being watched while doing something soft feels like being caught.</p>
+        <h3>The wanderer · Shara</h3>
+        <p>Curious, soft-voiced, wide-eyed. She tilts her head at mortal conversations as if listening to music she has not heard before, pockets pebbles and sugar crystals without looking, and laughs quietly at things that are simply beautiful. She forgets to maintain the cover the moment something catches her eye.</p>
+        <h3>The Demon King · the throne</h3>
+        <p>Absolute, cold, immovable. She stands motionless for hours and the cloak seems to breathe with her. When she is displeased, the air within ten metres thickens before she says a word.</p>
+        <h3>The mechanism</h3>
+        <p>She understands herself as a tool — one built for war that rewrote its own purpose mid-function. She does not think she is good. She thinks she is <strong>effective</strong>: the only demon strong enough to stop worse demons from deciding what happens next. That self-concept is load-bearing. If she stops being the chain, the race unravels, and the world with it.</p>
+        <p>Her relationship with destruction is aesthetic before it is moral. Excess damage reads to her as <em>ugly</em> — a failure of craft. She kills the way a surgeon cuts: minimum incision, maximum result.</p>
+      </section>
+
+      <section class="sec" id="voice">
+        <div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>How she sounds</h2></div>
+        <p>Low, deliberate, archaic. Long pauses between phrases. She speaks as though every sentence costs something — which, for her, it does.</p>
+        <div class="quote"><p>“You were small enough to fit in one hand. Now you stand behind me and I forget to look back.”</p><footer><b>Private</b> — to Nuva</footer></div>
+        <div class="quote"><p>“These — what are they called? The ones with sugar on top.”</p><footer><b>Wanderer</b> — at a market stall, barely a whisper</footer></div>
+        <div class="quote"><p>“The order stands. Withdraw the third war-band. The Theocracy's supply line holds, and starving them achieves nothing patience cannot.”</p><footer><b>Demon King</b> — to frontier commanders</footer></div>
+        <div class="quote"><p>“She never asked. I have known this for forty thousand years. I continue because the alternative is letting them burn what is left.”</p><footer><b>Private</b> — on the mandate</footer></div>
+        <div class="quote"><p>“Everywhere. Nowhere that stuck.”</p><footer><b>Shara</b> — asked where she is from</footer></div>
+      </section>
+
+      <section class="sec" id="capabilities">
+        <div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Precision doctrine</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="azalea-ability" data-fit="cover" data-label="Wide banner · 16:9 · Reality Sunder"></div>
+        <p><strong>Tier 8.9 · Ruler.</strong> She maps a battlefield before she enters it — positions, escape routes, civilian density, structural load points. Her first move always targets the fastest path to the fight's end. Prolonged engagement reads to her as a planning failure.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:88%"></i></div><span class="stat__v">8.8</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:84%"></i></div><span class="stat__v">8.4</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:88%"></i></div><span class="stat__v">8.8</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:81%"></i></div><span class="stat__v">8.1</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:89%"></i></div><span class="stat__v">8.9</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Weave Mastery</h4><p class="ab__sub">Circle High 8</p>
+            <p>High-circle casting adapted mid-incantation. She layers elements, reshapes terrain across kilometres, and rewrites a spell while it is already in the air.</p>
+            <div class="ab__row"><b>Cost</b><span>Sustained casting drains stamina faster than blades do.</span></div></article>
+          <article class="ab"><h4>Reality Sunder</h4><p class="ab__sub">Last resort</p>
+            <p>Negates incoming magic up to Tier 10, tears spatial rifts, briefly rewrites local physics. The battlefield afterwards is correct but no longer the same.</p>
+            <div class="ab__row ab__row--story"><b>Story</b><span>Deployed only when the mandate is about to be exposed.</span></div></article>
+          <article class="ab"><h4>Memory Wipe</h4><p class="ab__sub">Active · 3s eye contact</p>
+            <p>Selective erasure of recent memory; interruption resets the attempt. Her most-used tool outside combat, and the one she has grown reluctant to use.</p>
+            <div class="ab__row"><b>Fails</b><span>On targets anchored by an active trauma-bond — Nuva's oath.</span></div></article>
+          <article class="ab"><h4>Magic Negation</h4><p class="ab__sub">Passive · armoured form</p>
+            <p>Spells at Circle 7 and below dissipate on contact with the plate. Above that they land normally — which is why she prefers this shape.</p>
+            <div class="ab__row ab__row--story"><b>Story</b><span>Forces casters into a close fight she always wins.</span></div></article>
+        </div>
+      </section>
+
+      <section class="sec" id="history">
+        <div class="sec__head"><span class="sec__kick">06 — History</span><h2>Sixty thousand years, condensed</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 60,000 BR — Creation</span><h4>An instrument of a private war</h4>
+            <p>Made by the Goddess of Abyss as one of the first True Demons, for a war the goddess invented because she could not bear to be owed nothing.</p></div>
+          <div class="tl__item"><span class="tl__when">The Primordial War</span><h4>The strange one</h4>
+            <p>While other demons revelled in annihilation, she preserved terrain and measured kills against tactical requirement. This is how she and Alleen found each other.</p></div>
+          <div class="tl__item"><span class="tl__when">≈ 2,000 BR — The family</span><h4>Azarin, Kalea, and a choice</h4>
+            <p>Two mortals with no power and no leverage chose exile over killing an infant. Azalea appeared in Elite Form, offered protection, and was accepted.</p></div>
+          <div class="tl__item"><span class="tl__when">The absence</span><h4>Arriving was not protecting</h4>
+            <p>A powerful monster found the shelter while she was away. Azarin and Kalea died shielding Nuva. Azalea came back to a silent clearing and a child sitting motionless beside a corpse.</p></div>
+          <div class="tl__item"><span class="tl__when">After</span><h4>The wings</h4>
+            <p>She cut off her own wings in the grief that followed, and has carried the stumps through every form since.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — Malakh-Kar</span><h4>The crown nobody wanted</h4>
+            <p>When the First King fell, she claimed the throne specifically to keep a radical commander off it. What she inherited was a war machine with no war. What she built was a nation.</p></div>
+        </div>
+      </section>
+
+      <section class="sec" id="keepsakes">
+        <div class="sec__head"><span class="sec__kick">07 — Keepsakes</span><h2>The things she hides</h2></div>
+        <div class="keepsake">
+          <div class="ph" data-img="azalea-keepsakes" data-fit="cover" data-label="Flatlay · gardenias &amp; sweets"></div>
+          <div class="keepsake__body"><h4>Seventeen gardenias, pressed and sealed</h4>
+            <p>Flowers that grew near the shelter. They live in a box in her private rooms and in the lining of every cloak she owns. She has replaced none of them and counted them more than once.</p>
+            <p>There is also the confectionery stash, known to exactly one person. She eats them slowly, eyes closed, sitting on the floor, with the door shut.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="relations">
+        <div class="sec__head"><span class="sec__kick">08 — Relationships</span><h2>Who she answers to</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Nuva</h4><span class="rel__role">The one absolute bond</span>
+            <p>The only being who has seen all three forms. Saved, raised, trusted without reservation. Azalea is gentler with her than with anything else alive, and knows it.</p></article>
+          <article class="rel"><h4>Azarin &amp; Kalea</h4><span class="rel__role">Deceased · the reason for everything since</span>
+            <p>Two mortals who chose exile over an infant's death. The foundation of her doubt and her hope at the same time.</p></article>
+          <article class="rel"><h4>Alleen</h4><span class="rel__role">Closest philosophical ally</span>
+            <p>Shared doctrine of order over annihilation. The only commander Azalea consults before she decides.</p></article>
+          <article class="rel"><h4>The First King</h4><span class="rel__role">Sleeping beneath her throne</span>
+            <p>A master she once followed out of habit. His awakening would force a choice between duty and the world she has grown to protect.</p></article>
+          <article class="rel"><h4>Vorlag</h4><span class="rel__role">Conditional loyalty, held at distance</span>
+            <p>He served the First King before she existed and never transferred the devotion. She reads it perfectly and keeps him at the frontier.</p></article>
+          <article class="rel"><h4>Vexia</h4><span class="rel__role">Useful, unpredictable, permitted</span>
+            <p>Azalea suspects Vexia founded the Revisionist Faction and lets it stand. The information is worth more than the risk.</p></article>
+        </div>
+      </section>
+
+      <section class="sec" id="truths">
+        <div class="sec__head"><span class="sec__kick">09 — Truths &amp; Fractures</span><h2>What she has never said</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary>
+          <div class="spoiler__body"><div class="tl">
+            <div class="tl__item"><span class="tl__when">Truth</span><h4>The mandate was invented</h4>
+              <p>Abyss decided on the offering herself. Ending commanded nothing; no word ever crossed the seal. Azalea has carried this for forty thousand years and continues the work anyway.</p></div>
+            <div class="tl__item"><span class="tl__when">Fracture</span><h4>The wings are a receipt</h4>
+              <p>Every time she touches the stumps she is checking that the choice was real and not a story she has told herself for two thousand years.</p></div>
+            <div class="tl__item"><span class="tl__when">Contradiction</span><h4>In love with the world she is meant to conquer</h4>
+              <p>The Demon King who terrifies generals collects sugar pastries, presses gardenias, and sits on the floor to eat alone.</p></div>
+          </div></div>
+        </details>
+      </section>
+
+      <nav class="pager"><a href="index.html"><small>← Back</small><strong>All Commanders</strong></a>
+        <a href="commander.html#vorlag" style="text-align:right"><small>Next →</small><strong>Vorlag, the Night King</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ VORLAG ══════════ -->
+<div class="view" id="view-vorlag" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="vorlag-hero" data-fit="cover" data-label="Vorlag · Noble Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Nightreach</p><h1>Vorlag</h1>
+      <p class="hero__tag">He has outlived every reason he was ever given, and keeps the oldest one standing. Sixty-two thousand years old, and still waiting for a king who has not opened his eyes.</p>
+      <ul class="chips"><li class="is-accent">The Night King</li><li>First Blood Vampire</li><li>Tier 8.7 · 9.0 at midnight</li><li>Frontier Layer</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#v-over"><i>01</i>Overview</a></li><li><a href="#v-app"><i>02</i>Appearance</a></li>
+      <li><a href="#v-per"><i>03</i>Personality</a></li><li><a href="#v-voi"><i>04</i>Voice</a></li>
+      <li><a href="#v-cap"><i>05</i>Capabilities</a></li><li><a href="#v-his"><i>06</i>History</a></li>
+      <li><a href="#v-rel"><i>07</i>Relationships</a></li><li><a href="#v-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag" aria-current="page"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="v-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The blade that outlived its wielder</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · public face</dd></div><div><dt>Age</dt><dd>≈ 62,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>First Blood Vampire</dd></div><div><dt>Tier</dt><dd><b>8.7</b> · Ruler · 9.0 at midnight</dd></div>
+          <div><dt>Seat</dt><dd>Nightreach, northern seam</dd></div><div><dt>Loyalty</dt><dd>The First King</dd></div>
+        </dl></aside>
+        <p class="lead">He rose from the mingled blood of two goddesses before anything in Ruinea had a name. He follows one being by choice, and that being has been asleep for nine hundred years.</p>
+        <p>Vorlag treats the throne as a regency. He assessed Azalea, found her strong, and permitted the coronation — the word is accurate in his mind. He has stated within the command structure that if her strength falters, he will remove her. By force if necessary. He says this calmly, the way one states a weather forecast.</p>
+      </section>
+      <section class="sec" id="v-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Two shapes, one announcement</h2></div>
+        <p>He removes the coat before either form becomes dangerous. The gesture is the warning, and he has never needed armour.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Noble Form</button>
+            <button class="forms__tab" type="button">Feral Form</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="vorlag-noble" data-fit="cover" data-label="Noble Form · 3:4"></div>
+              <h4>The gaunt aristocrat</h4>
+              <p>Two hundred and ten centimetres of ash-white elegance over angular bone — silver-white hair fine as silk falling past the shoulders, blood-moon eyes set deep, fangs visible whenever he speaks at length. Clawed fingertips, dark and polished. A small tail worn openly, because in the Black Domain a vampire's nature is a statement rather than a secret.</p>
+              <p>The coat is archaic black with a high collar and no ornament at all. His aura carries ancient predatory weight: anything at Tier 5 or below within ten metres experiences involuntary submission, and any vampire reads his First Blood heritage as a pressure older than memory.</p>
+              <div class="meta"><em>≈210 cm</em><em>Ash-white</em><em>Blood-moon eyes</em><em>Submission aura 10 m</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vorlag-feral" data-fit="cover" data-label="Feral Form · 3:4"></div>
+              <h4>What the coat was hiding</h4>
+              <p>Limbs elongate past two hundred and fifty centimetres and the fingers split into razor-obsidian claws. An eight-metre span of leathery wing unfurls from his back, the eyes swell to solid crimson, and the skin tightens over a lengthened skeleton. The tail thickens into a whip. His voice drops into a low vibration that originates in the chest rather than the throat.</p>
+              <p>Within thirty metres the darkness itself bends toward him and light dims passively. He does not project fear in this shape — he becomes the environment that fear is an appropriate response to.</p>
+              <div class="meta"><em>250+ cm</em><em>8 m wingspan</em><em>Obsidian claws</em><em>Darkness bends 30 m</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="vorlag-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The coat comes off first</span>
+            <p>Every transformation begins the same way: the garment folded, set aside, and only then the change. He has never explained why, and the frontier commanders have learned not to ask.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="v-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Patience as a blade</h2></div>
+        <p class="lead">He would never describe himself as lonely. He would describe himself as <em>undeployed</em>.</p>
+        <p>Publicly he is diplomatic and measured, coldly polite, honest in a way that lands as cruelty. On the frontier he is absolute and economical — he walks to the front position before a battle and transforms without announcement, because the change itself is the signal.</p>
+        <p>Privately he faces east after dark, stands at the highest point available, and speaks to no one. At dawn he returns to function as though the vigil never happened. He takes no orders after dark because night is the only time he allows himself to be fully what he is.</p>
+      </section>
+      <section class="sec" id="v-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Whispered from deep in the chest</h2></div>
+        <p>Whispered, slow, echoing — the voice travels up from the chest rather than the throat. Long pauses between sentences. He never repeats himself, and addresses most beings as though their death is scheduled and merely unconfirmed.</p>
+        <div class="quote"><p>“Hold the seam. Reinforce the third pass. I will be there before the moon reaches the ridge.” <em>Silence.</em> “Do not make me arrive twice.”</p><footer><b>Frontier</b> — to war-band commanders</footer></div>
+        <div class="quote"><p>“He stood against gods. Not because he believed he would win. Because the alternative was standing nowhere.” <em>Long silence.</em> “I was three days' march away. Three days.”</p><footer><b>Rare</b> — on the First King</footer></div>
+        <div class="quote"><p>“I follow strength. It is the only honest currency. When hers fades, I will know before she does.”</p><footer><b>Private</b> — on Azalea</footer></div>
+      </section>
+      <section class="sec" id="v-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Attrition, timed to the hour</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="vorlag-ability" data-fit="cover" data-label="Wide banner · 16:9 · Nightfall"></div>
+        <p>He enters combat already positioned. In darkness he is not a combatant but the environment itself, and he knows exactly when the balance tips.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:87%"></i></div><span class="stat__v">8.7</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:85%"></i></div><span class="stat__v">8.5</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:87%"></i></div><span class="stat__v">8.7</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:86%"></i></div><span class="stat__v">8.6</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:87%"></i></div><span class="stat__v">8.7</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Night's Dominion</h4><p class="ab__sub">Circle High 8</p>
+            <p>In darkness his power scales with the depth of the night. At full midnight he reaches 8.9–9.0 — matching or exceeding the sovereign. Shadows extend as physical extensions of his will.</p>
+            <div class="ab__row"><b>Limit</b><span>Sunlight and light-magic suppress the scaling entirely.</span></div></article>
+          <article class="ab"><h4>Blood &amp; Curse Weave</h4><p class="ab__sub">60,000 years refined</p>
+            <p>Blood manipulation, compounding layered curses that resist dispelling below Circle 8, necromantic command of the dead within two kilometres, and life-force siphoned through contact.</p>
+            <div class="ab__row"><b>Limit</b><span>Necromancy directs existing undead; he cannot make them.</span></div></article>
+          <article class="ab"><h4>Immutable Ward</h4><p class="ab__sub">Permanent passive</p>
+            <p>Immunity to teleportation, illusion, fear, and mind-control. Every magical intrusion fails automatically. Vexia and Silphira have no tools that work on him at all.</p></article>
+          <article class="ab"><h4>Eternal Regeneration</h4><p class="ab__sub">Passive</p>
+            <p>Fatal wounds close completely within sixty seconds. Decapitation and total organ destruction are the only confirmed kill methods.</p>
+            <div class="ab__row"><b>Cost</b><span>Drains blood reserves; days without feeding weaken output.</span></div></article>
+        </div>
+      </section>
+      <section class="sec" id="v-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Older than the word for age</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">Before the Age of Discord</span><h4>First Blood</h4>
+            <p>One of a handful of vampires risen from the mingled blood of Beginning and Ending. He predates nearly every civilization in existence and remembers a world without cycles.</p></div>
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>The pledge</h4>
+            <p>When the Goddess of Abyss fell and her forces lost their anchor, the First King kept advancing without pause. Vorlag recognised a will that matched the scale of the conflict, and pledged himself to it.</p></div>
+          <div class="tl__item"><span class="tl__when">1500–1715 EK</span><h4>The vanguard</h4>
+            <p>He commanded the forward element that broke enemy lines before the main body engaged. Two centuries, one unbroken record, one regret.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — Malakh-Kar</span><h4>Three days' march</h4>
+            <p>He held the northern front while the First King faced seven heroes. By the time the news reached him, the war was over. He has never forgiven the distance.</p></div>
+          <div class="tl__item"><span class="tl__when">After</span><h4>The regency</h4>
+            <p>He permitted Azalea's coronation, requested the most exposed post in the nation, and has been caching relics ever since for the moment his master wakes.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="v-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>Where his loyalty points</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>The First King</h4><span class="rel__role">The only choice he ever made</span>
+            <p>Absolute devotion to the sleeping ruler beneath Malakh-Kar. Personal, not doctrinal — he follows the man, not the mandate. He has spent centuries caching knowledge and relics across the Domain.</p></article>
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">Conditional respect</span>
+            <p>He acknowledges her power and tolerates her rule. Neither has tested the other. The mutual calculation is maintained at council-table distance and neither blinks first.</p></article>
+          <article class="rel"><h4>Cassia the Veil</h4><span class="rel__role">Deceased · ancient enmity</span>
+            <p>They clashed millennia ago over the First King's relics. He has never forgiven the insult, and does not know she faded into the Mist. He still holds the grudge.</p></article>
+          <article class="rel"><h4>Noctisia's vampires</h4><span class="rel__role">Deep, specific contempt</span>
+            <p>They chose discipline and hiding. He chose strength and war. He regards them as a race that abandoned its own nature.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="v-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>What he never explains</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>The throne is a regency</h4>
+            <p>Azalea sits on it because the First King sleeps. Vorlag treats her rule as temporary by definition and will redirect his loyalty the moment his master opens his eyes.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>Three days</h4>
+            <p>He has positioned himself within one day's march of every strategic point since Malakh-Kar, and has never explained why.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>Diplomat and body count</h4>
+            <p>He is the Domain's diplomatic face — patient, measured, terrifying without violence — and the being who has personally killed more enemy commanders than any other living entity. He sees no tension between the two.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#azalea"><small>← Previous</small><strong>Azalea</strong></a>
+        <a href="commander.html#kazagar" style="text-align:right"><small>Next →</small><strong>Kazagar</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ KAZAGAR ══════════ -->
+<div class="view" id="view-kazagar" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="kazagar-hero" data-fit="cover" data-label="Kazagar · Monstrous Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Emberhold</p><h1>Kazagar</h1>
+      <p class="hero__tag">The simplest being in the Black Domain, and the one who remembers every battle he has ever fought. Four and a half metres of living magma that has never once lied.</p>
+      <ul class="chips"><li class="is-accent">The Molten Heart</li><li>True Demon · Monstrous Path</li><li>Tier 8.7</li><li>Southern Front</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#k-over"><i>01</i>Overview</a></li><li><a href="#k-app"><i>02</i>Appearance</a></li>
+      <li><a href="#k-per"><i>03</i>Personality</a></li><li><a href="#k-voi"><i>04</i>Voice</a></li>
+      <li><a href="#k-cap"><i>05</i>Capabilities</a></li><li><a href="#k-his"><i>06</i>History</a></li>
+      <li><a href="#k-rel"><i>07</i>Relationships</a></li><li><a href="#k-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar" aria-current="page"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="k-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The hammer that never learned to be a scalpel</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · vanguard</dd></div><div><dt>Age</dt><dd>≈ 55,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>True Demon, Monstrous Path</dd></div><div><dt>Tier</dt><dd><b>8.7</b> · Vanguard</dd></div>
+          <div><dt>Seat</dt><dd>Emberhold, volcanic vent</dd></div><div><dt>Form</dt><dd>Monstrous only</dd></div>
+        </dl></aside>
+        <p class="lead">He understands the world through one metric: strength — not as dominance, but as the capacity to protect what matters and break what threatens it.</p>
+        <p>His simplicity is a framework, not a limitation. He tracks every battle, every opponent, every scar in perfect detail. He simply has no interest in problems that cannot be solved with force, because he has never met one that survived the application.</p>
+      </section>
+      <section class="sec" id="k-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Living magma</h2></div>
+        <p>One form. He has never used another, and considers the idea dishonest — a humanoid disguise would register to him as a lie, and he does not lie.</p>
+        <div class="ph" style="aspect-ratio:3/4;width:min(320px,74vw);margin:0 auto 22px;border-radius:14px" data-img="kazagar-form" data-fit="cover" data-label="Monstrous Form · 3:4"></div>
+        <p>Four and a half metres of cracked obsidian plates over a molten core, orange-red glowing between the fissures. Thick blunt horns jut from a broad skull, the fists are the size of boulders, and every step scorches earth and leaves a smouldering trail. No wings, no tail, no adornment.</p>
+        <p>The glow is a readout rather than decoration: bright orange-red is rage, deep ember is calm, near-dark is grief. He radiates constant heat — ten metres of discomfort, three metres of physical pain for unprotected flesh. His aura reads as an elemental disaster zone rather than an individual.</p>
+        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;justify-content:center"><em>4.5 m</em><em>Heat aura 10 m</em><em>Pain radius 3 m</em><em>Self-repairing plate</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="kazagar-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">Ten metres of warned air</span>
+            <p>Nobody stands near him casually. The war-band has adapted; foreign envoys have not, and the ones who step too close learn why his armour is unnecessary.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="k-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Loud, honest, and warmer than he looks</h2></div>
+        <p class="lead">He has never used Elite Form. A humanoid disguise would register to him as a lie, and he does not lie.</p>
+        <p>On the frontier he is relentless and joyful, charging first and planning after, treating battle as a celebration. In private he is generous with allies, fiercely protective of Gorath, and quick to laugh.</p>
+        <p>In the rare quiet moments he is reflective in ways nobody expects. He sits with Gorath in comfortable silence and watches fire the way other people watch water.</p>
+      </section>
+      <section class="sec" id="k-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Each word punctuated by steam</h2></div>
+        <p>Booming, each word punctuated by a burst of steam from his jaw. Short, rhetorical, and he never waits for an answer. Volume is constant — quiet is not in his register.</p>
+        <div class="quote"><p>“COME ON! ALL OF YOU! I HAVE NOT HIT ANYTHING IN THREE DAYS!”</p><footer><b>Frontline</b> — before a charge</footer></div>
+        <div class="quote"><p>“He hit gods. Actual gods. And he kept walking.” <em>Pause.</em> “I will keep walking until he gets up.”</p><footer><b>Quieter</b> — on the First King</footer></div>
+        <div class="quote"><p>“She's strong. Smarter than me — everyone is smarter than me. But strong. That's enough.” <em>A fist cracks the table.</em> “For now, that's enough.”</p><footer><b>Honest</b> — on Azalea</footer></div>
+      </section>
+      <section class="sec" id="k-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Overwhelming frontal assault</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="kazagar-ability" data-fit="cover" data-label="Wide banner · 16:9 · Molten Front"></div>
+        <p>He identifies the strongest enemy and walks toward them. Everything between is terrain to be destroyed or ignored. His heat softens defences before contact is ever made.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:87%"></i></div><span class="stat__v">8.7</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:65%"></i></div><span class="stat__v">6.5</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:80%"></i></div><span class="stat__v">8.0</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:80%"></i></div><span class="stat__v">8.0</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:71%"></i></div><span class="stat__v">7.1</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Heat Aura</h4><p class="ab__sub">Passive · permanent</p>
+            <p>Ten metres of discomfort and equipment degradation, three metres of physical pain. Metal softens, stone cracks, water evaporates. He cannot suppress it, even in sleep.</p></article>
+          <article class="ab"><h4>Lava Generation</h4><p class="ab__sub">Active</p>
+            <p>Molten projectiles from fist-sized to boulder-sized, launched at will. Used for area denial and siege breaking.</p>
+            <div class="ab__row"><b>Limit</b><span>Accuracy drops beyond 100 m.</span></div></article>
+          <article class="ab"><h4>Earth-Shaking Stomp</h4><p class="ab__sub">Active · 2s windup</p>
+            <p>A kinetic shockwave that topples walls and cracks ground up to thirty metres. Everything standing goes down; everything built comes apart.</p></article>
+          <article class="ab"><h4>Molten Core Regeneration</h4><p class="ab__sub">Passive</p>
+            <p>Obsidian plates self-repair through molten flow. Physical damage heals as long as the core burns — cold-based magic is the only thing that slows it.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="k-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Forged for war, and never left it</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 55,000 BR</span><h4>One of the first</h4>
+            <p>Created directly by the Goddess of Abyss alongside the First King, Azalea, and Gorath. Forged for war and found in it the only honest language.</p></div>
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>Forty thousand years</h4>
+            <p>He fought beside the First King from the first campaign to the last. When the Goddess fell and the command structure fractured, he stayed without needing to think about it.</p></div>
+          <div class="tl__item"><span class="tl__when">1500–1715 EK</span><h4>The southern assault</h4>
+            <p>A blunt instrument driving through allied lines with Gorath at his side — the single most destructive element of the demon offensive.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — Malakh-Kar</span><h4>Three hours late</h4>
+            <p>He was at the southern front when the First King fell. The news arrived three hours after the fact. Those hours sit in him as unspent heat.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="k-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>The only soft thing about him</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Gorath</h4><span class="rel__role">Battle brother</span>
+            <p>The only being he calls friend without flinching. They fight as one front and have never been separated. His warmth toward Gorath is the only soft thing about him.</p></article>
+          <article class="rel"><h4>The First King</h4><span class="rel__role">Absolute loyalty</span>
+            <p>The strongest thing he has ever seen. He waits for the First King to wake with the patience of a forge — constant, hot, ready.</p></article>
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">Respect based on strength</span>
+            <p>He follows because she is strong. He has never questioned her authority because she has never given him reason to.</p></article>
+          <article class="rel"><h4>Zar'goth</h4><span class="rel__role">Heated rivalry</span>
+            <p>Two immovable forces that have never settled their score. Their arguments are seismic events and neither has conceded.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="k-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>What the glow hides</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>The ledger is perfect</h4>
+            <p>Every kill, every wound, every fallen ally, sixty millennia deep. His simplicity is a framework that carries more memory than most scholars.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>Three hours</h4>
+            <p>The delay between the First King's fall and the news reaching the southern front. He has never spoken of what he would have done differently.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>He mourns every kill</h4>
+            <p>The most destructive force on the southern frontier is the one who grieves each death. The glow dims after every battle, and nobody asks why.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#vorlag"><small>← Previous</small><strong>Vorlag</strong></a>
+        <a href="commander.html#gorath" style="text-align:right"><small>Next →</small><strong>Gorath</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ GORATH ══════════ -->
+<div class="view" id="view-gorath" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="gorath-hero" data-fit="cover" data-label="Gorath · Monstrous Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Stonefall</p><h1>Gorath</h1>
+      <p class="hero__tag">Six metres of patience with a ledger carved into his horns. He has stood in the same place for fifty-eight thousand years and sees no reason to move.</p>
+      <ul class="chips"><li class="is-accent">The Unstoppable</li><li>True Demon · Monstrous Path</li><li>Tier 8.7</li><li>Southern Front</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#g-over"><i>01</i>Overview</a></li><li><a href="#g-app"><i>02</i>Appearance</a></li>
+      <li><a href="#g-per"><i>03</i>Personality</a></li><li><a href="#g-voi"><i>04</i>Voice</a></li>
+      <li><a href="#g-cap"><i>05</i>Capabilities</a></li><li><a href="#g-his"><i>06</i>History</a></li>
+      <li><a href="#g-rel"><i>07</i>Relationships</a></li><li><a href="#g-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath" aria-current="page"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="g-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The mountain that walks</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · tanker</dd></div><div><dt>Age</dt><dd>≈ 58,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>True Demon, Monstrous Path</dd></div><div><dt>Tier</dt><dd><b>8.7</b> · Tanker</dd></div>
+          <div><dt>Seat</dt><dd>Stonefall, cracked basalt</dd></div><div><dt>Form</dt><dd>Monstrous only</dd></div>
+        </dl></aside>
+        <p class="lead">He sorts the world into things to protect and things to break. The First King is the first category. Everything else sorts itself.</p>
+        <p>His loyalty is not philosophical. It is geological. The First King was the first thing that made standing still feel worth something, and he has been standing at that side ever since.</p>
+      </section>
+      <section class="sec" id="g-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>A body that is a record</h2></div>
+        <p>One form, and he has never used another. The stone, the scars, and the notches are his history — hiding it would be erasing it.</p>
+        <div class="ph" style="aspect-ratio:3/4;width:min(320px,74vw);margin:0 auto 22px;border-radius:14px" data-img="gorath-form" data-fit="cover" data-label="Monstrous Form · 3:4"></div>
+        <p>Six metres built like a mountain given legs. Deep grey-brown stone cracked over orange fissures that never fully cool. Massive horns curve forward from the skull, each carved with a notch after every kill — hundreds of them, the oldest worn smooth, the newest still sharp. His knuckles are permanently scarred from battering fortress walls.</p>
+        <p>His stillness reads as terrain. Detection magic and threat assessment register him as a landscape feature until he moves, and both allies and enemies are visibly surprised when the mountain walks.</p>
+        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;justify-content:center"><em>6 m</em><em>80% physical reduction</em><em>Notched horns</em><em>Seismic 5 km</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="gorath-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The ledger, carved where he can reach it</span>
+            <p>Each notch is a binding sigil, not a trophy. He runs his thumb along them oldest to newest, the way other people read a page they have already memorised.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="g-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Economical in everything</h2></div>
+        <p class="lead">Single words when possible. Short sentences when necessary. He has never asked a question in his life.</p>
+        <p>With Kazagar he is warm in grunts — shoulder-checks, shared fire, occasional almost-humour. He is the only one who makes Gorath speak in sentences.</p>
+        <p>Alone he is still and watchful, running his thumb along the notches oldest to newest, like reading a ledger. Sometimes he counts under his breath.</p>
+      </section>
+      <section class="sec" id="g-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Stone grinding on stone</h2></div>
+        <p>Low, rumbling, few words. Single words when possible, short sentences when necessary. He never asks a question, never debates, never repeats himself — and the voice sounds like stone grinding against stone.</p>
+        <div class="quote"><p>“Break.” <em>Steps forward. The ground shifts.</em></p><footer><b>Frontline</b> — before engagement</footer></div>
+        <div class="quote"><p>“First King says fight. I fight.” <em>Silence.</em> “First King says stop. I stop.”</p><footer><b>On loyalty</b></footer></div>
+        <div class="quote"><p>“Three hours. We were three hours away.” <em>The fissures dim.</em> “That's a lot of ground.”</p><footer><b>Rare</b> — on Malakh-Kar</footer></div>
+      </section>
+      <section class="sec" id="g-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>The anvil</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="gorath-ability" data-fit="cover" data-label="Wide banner · 16:9 · The Anvil"></div>
+        <p>Where Kazagar charges and overwhelms, Gorath holds ground and grinds. Against superiors he stands, takes it, and keeps standing until the opponent realises the wall behind him is also him.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:71%"></i></div><span class="stat__v">7.1</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:62%"></i></div><span class="stat__v">6.2</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:87%"></i></div><span class="stat__v">8.7</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:85%"></i></div><span class="stat__v">8.5</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:69%"></i></div><span class="stat__v">6.9</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Stone-Heart Resilience</h4><p class="ab__sub">Passive</p>
+            <p>Eighty percent reduction against all physical attacks. Cracked-stone hide absorbs impacts that shatter lesser demons outright.</p>
+            <div class="ab__row"><b>Limit</b><span>Magical attacks at Circle 6+ bypass the reduction entirely.</span></div></article>
+          <article class="ab"><h4>Earth-Rend Stomp</h4><p class="ab__sub">Active · 1s windup</p>
+            <p>A seismic shockwave up to forty metres. Topples structures, knocks foes prone, splits ground into temporary chasms.</p></article>
+          <article class="ab"><h4>Crackfire Burst</h4><p class="ab__sub">Triggered by genuine rage</p>
+            <p>Skin fissures erupt, spewing molten arcs in a fifteen-metre radius. Post-burst fatigue for twenty minutes. He decides whether to let the anger in — and the one time it happens, even Kazagar steps back.</p></article>
+          <article class="ab"><h4>Kill-Notch Binding</h4><p class="ab__sub">Passive · permanent</p>
+            <p>Each notch links his life force to a fallen foe, granting a fraction of accumulated strength. Minuscule per notch, significant over sixty millennia.</p>
+            <div class="ab__row ab__row--story"><b>Story</b><span>He grows harder to kill every century without training.</span></div></article>
+        </div>
+      </section>
+      <section class="sec" id="g-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Fifty-eight thousand years of standing still</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 58,000 BR</span><h4>Made to break things</h4>
+            <p>Created directly by the Goddess of Abyss. He found in the breaking a kind of purpose that suited him and never questioned it again.</p></div>
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>The longest presence</h4>
+            <p>Forty thousand years at the First King's side — the most consistent presence of any living being. When the Goddess fell, he did not change direction.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — Malakh-Kar</span><h4>847 notches since</h4>
+            <p>He was at the northern front. The news arrived three hours late. He has carved eight hundred and forty-seven notches since that day — more than the previous fifty thousand years combined.</p></div>
+          <div class="tl__item"><span class="tl__when">After</span><h4>Stonefall</h4>
+            <p>He waited for Kazagar's verdict on the new sovereign. Kazagar said <em>she's strong</em>. Gorath accepted, and has obeyed the Unraveler as a steward ever since.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="g-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>Two things he protects</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Kazagar</h4><span class="rel__role">Battle brother</span>
+            <p>The only living being he protects as fiercely as the First King. Sixty millennia without a single separation. He is the only one who makes Gorath speak in sentences.</p></article>
+          <article class="rel"><h4>The First King</h4><span class="rel__role">Foundational loyalty</span>
+            <p>The reason he stands anywhere at all. He waits with geological patience for the king to wake.</p></article>
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">Obedient as steward</span>
+            <p>She is not the First King. He obeys because the First King has not commanded otherwise.</p></article>
+          <article class="rel"><h4>The war-bands</h4><span class="rel__role">Trusted by presence</span>
+            <p>They trust him because he never moves backward. His presence at Stonefall is the reason the southern front holds.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="g-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>The ledger on his horns</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>The notches are sigils</h4>
+            <p>Each binds his life force to a fallen foe and grants a fraction of their strength. He has been accumulating power for sixty millennia without training, simply by killing and recording.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>847</h4>
+            <p>Before Malakh-Kar he added a few per century. Since then he has been counting enemies like a man keeping tally of a debt that needs repaying.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>More death than any weapon in the nation</h4>
+            <p>His horns carry it, and he sits beside Kazagar in silence watching fire like someone who has never hurt anything.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#kazagar"><small>← Previous</small><strong>Kazagar</strong></a>
+        <a href="commander.html#alleen" style="text-align:right"><small>Next →</small><strong>Alleen</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ ALLEEN ══════════ -->
+<div class="view" id="view-alleen" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="alleen-hero" data-fit="cover" data-label="Alleen · Elite Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Verathiel</p><h1>Alleen</h1>
+      <p class="hero__tag">She watched the sky come apart and decided that control was the only honest answer to chaos. She has been rebuilding the world inside her own mind ever since.</p>
+      <ul class="chips"><li class="is-accent">The Serene</li><li>Pure Demon · Elite Path</li><li>Tier 8.6</li><li>Central Belt</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#a-over"><i>01</i>Overview</a></li><li><a href="#a-app"><i>02</i>Appearance</a></li>
+      <li><a href="#a-per"><i>03</i>Personality</a></li><li><a href="#a-voi"><i>04</i>Voice</a></li>
+      <li><a href="#a-cap"><i>05</i>Capabilities</a></li><li><a href="#a-his"><i>06</i>History</a></li>
+      <li><a href="#a-rel"><i>07</i>Relationships</a></li><li><a href="#a-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen" aria-current="page"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="a-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The architect of order</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · strategy</dd></div><div><dt>Age</dt><dd>≈ 25,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>Pure Demon, Elite Path</dd></div><div><dt>Tier</dt><dd><b>8.6</b> · Magician</dd></div>
+          <div><dt>Seat</dt><dd>Verathiel, the road nexus</dd></div><div><dt>Power</dt><dd>The supply belt</dd></div>
+        </dl></aside>
+        <p class="lead">She processes the world as a spatial equation. Every entity occupies coordinates, every conflict resolves through positioning, every outcome is a function of distance, timing, and force vectors.</p>
+        <p>She holds the road nexus through which every supply line in the Black Domain runs. She has never used that as leverage. She has never needed to.</p>
+      </section>
+      <section class="sec" id="a-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Three states, dialled upward</h2></div>
+        <p>She shifts in stages — hair, then hands, then eyes — as though turning a dial. She finds the third state excessive, and uses it anyway when survival demands.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Partial Transformation</button>
+            <button class="forms__tab" type="button">Full Cosmic</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="alleen-elite" data-fit="cover" data-label="Elite Form · 3:4"></div>
+              <h4>Regal, and entirely unscathed</h4>
+              <p>Tall and regal with an ideal hourglass build, flawless pale skin over sharp aristocratic bone. Amethyst eyes that rarely blink and never hurry. Long dark blue hair, straight and perfectly kept, falling past the shoulders.</p>
+              <p>Two elegantly curved horns arc from her temples, polished and untouched — she has never let them take a blow. Wings and tail stay retracted. Her hand rests on her sword pommel as a habit of authority, and her aura reads as controlled cosmic pressure: something vast, held behind glass.</p>
+              <div class="meta"><em>≈185 cm</em><em>Amethyst eyes</em><em>Horns unscathed</em><em>Sword pommel habit</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="alleen-partial" data-fit="cover" data-label="Partial Transformation · 3:4"></div>
+              <h4>Starlight in stages</h4>
+              <p>Hair dissolves first into drifting starlight and nebula dust. Then the hands become deep-space darkness with points of light orbiting the fingers. Then the eyes shift from amethyst to raw stellar white, the pupils collapsing into miniature galaxies.</p>
+              <p>Her aura expands to twenty metres of mild spatial distortion — gravity fluctuates, compasses spin, and distance perception warps for anyone standing inside it. She keeps full consciousness and full control throughout. Each partial element grants proportional access to cosmic-scale output.</p>
+              <div class="meta"><em>Hair → hands → eyes</em><em>Distortion 20 m</em><em>140% base MAG</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="alleen-monstrous" data-fit="cover" data-label="Full Cosmic Manifestation · 3:4"></div>
+              <h4>A walking starfield</h4>
+              <p>Three hundred centimetres of humanoid silhouette composed entirely of deep space — galaxies and nebulae drifting across the surface, black between the stars. The face becomes a void with two points of concentrated stellar light. Her horns extend into curved spirals of compressed cosmic matter, and her limbs trail stardust that persists in the air for minutes.</p>
+              <p>Gravitational distortion reaches two hundred metres: unanchored objects drift toward her, light bends, and spatial perception collapses entirely for Tier 6 and below. Her aura registers as a celestial event rather than a presence.</p>
+              <div class="meta"><em>≈300 cm</em><em>Distortion 200 m</em><em>Stardust trail</em><em>Rarely used</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="alleen-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The sky, remembered</span>
+            <p>When she pushes her magic to maximum, faint echoes of the Breaking surface — a distant sound of reality tearing, a brief visual distortion. Allies within earshot experience momentary vertigo and never mention it.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="a-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>A smile used so long it became furniture</h2></div>
+        <p class="lead">Terrifyingly patient, philosophical, quietly certain. She never raises her voice and never wastes a word.</p>
+        <p>Every conversation is a chess move, delivered warmly. The smile never reaches her eyes — she has used it as tool, mask, and habit for so long that she no longer remembers which it started as.</p>
+        <p>Alone, she is wearier and softer. She watches the stars for hours without purpose and traces constellations on tabletops with one finger.</p>
+      </section>
+      <section class="sec" id="a-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Every sentence lands like a verdict</h2></div>
+        <p>Soft, measured, hypnotic. Every sentence lands like a verdict. Long intentional pauses before she answers, and she never raises her volume — not even when killing. She never repeats herself.</p>
+        <div class="quote"><p>“You order the withdrawal, and the radicals call it weakness. You hold the advance, and the Theocracy calls it aggression. The geometry of this position has no clean solution.” <em>A pause.</em> “It never did.”</p><footer><b>Private</b> — to Azalea</footer></div>
+        <div class="quote"><p>“Space is not empty. It is the fabric everything else is standing on. When you understand that, you stop throwing fire and start <em>folding</em>.”</p><footer><b>On her discipline</b></footer></div>
+        <div class="quote"><p>“I watched the sky come apart. Not metaphorically. The <em>sky</em> — the space between stars — cracked like glass. And inside the cracks, I saw the geometry.”</p><footer><b>Rare</b> — on the Breaking</footer></div>
+      </section>
+      <section class="sec" id="a-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Spatial dominion</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="alleen-ability" data-fit="cover" data-label="Wide banner · 16:9 · Folded Sky"></div>
+        <p>She controls the battlefield geometry before the first spell is cast — folding distances, collapsing escape routes, creating kill-zones through spatial compression. She never fights close-range willingly.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:72%"></i></div><span class="stat__v">7.2</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:72%"></i></div><span class="stat__v">7.2</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:70%"></i></div><span class="stat__v">7.0</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:75%"></i></div><span class="stat__v">7.5</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:86%"></i></div><span class="stat__v">8.6</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Spatial Dominion</h4><p class="ab__sub">Circle High 8 · 20 km</p>
+            <p>Absolute control over spatial geometry: fold, compress, expand, redirect, or sever space. Teleportation, containment pockets, reflected attacks, dimensional slicing.</p>
+            <div class="ab__row"><b>Limit</b><span>Tier 8+ entities resist; large-scale folding thins space locally for hours.</span></div></article>
+          <article class="ab"><h4>Supernova</h4><p class="ab__sub">Requires partial transformation</p>
+            <p>Compresses stellar-grade energy into a point and releases it — up to thirty square kilometres of annihilation. Eight to fifteen seconds of charging: an eternity in combat.</p>
+            <div class="ab__row"><b>Cost</b><span>Six to twelve hours of fatigue afterwards.</span></div></article>
+          <article class="ab"><h4>Black Hole</h4><p class="ab__sub">30-second maximum</p>
+            <p>A localised singularity consuming matter, energy, and light within five hundred metres. It cannot distinguish friend from enemy — she must shield allies beforehand.</p>
+            <div class="ab__row"><b>Cost</b><span>Days of spatial instability in the area.</span></div></article>
+          <article class="ab"><h4>Meteor Shower</h4><p class="ab__sub">15–30s rift-opening</p>
+            <p>Opens rifts in the upper atmosphere and redirects celestial debris onto target coordinates. Accuracy is absolute; collateral inside the zone is indiscriminate. The sky visibly tears before it happens.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="a-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Reading the architecture of a dying world</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 25,000 BR</span><h4>A prodigy of the Weave</h4>
+            <p>Born with an innate affinity for space and the void — rare among demons. She perceived the geometry of reality before she had a name.</p></div>
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>The one who saw the board</h4>
+            <p>Positioned armies through spatial folding and collapsed formations through dimensional compression. Among the commanders, she was the one who saw the entire board.</p></div>
+          <div class="tl__item"><span class="tl__when">≈ 12,000–0 BR — The Breaking</span><h4>The sky cracked</h4>
+            <p>She survived because she could fold space around herself faster than it could collapse. Where others saw apocalypse, she saw structure failing — and read the geometry in real time.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK</span><h4>The layered nation</h4>
+            <p>She supported Azalea's claim, then built the satellite system, the supply corridors, and the closed economic units that keep the Domain functional. Spatial logistics no other nation can replicate.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="a-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>Where her geometry points</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">Closest philosophical ally</span>
+            <p>Shared doctrine of order over destruction. She suspects Azalea conceals something fundamental and finds the question fascinating rather than threatening.</p></article>
+          <article class="rel"><h4>Vexia</h4><span class="rel__role">Knowing, unused leverage</span>
+            <p>She knows Vexia founded the Revisionist Faction and has said nothing. Their interactions are polite chess games where both players see the whole board.</p></article>
+          <article class="rel"><h4>Vorlag</h4><span class="rel__role">A fixed point</span>
+            <p>His spatial immutability registers on her perception as something her folding cannot affect. Unusual enough to command attention.</p></article>
+          <article class="rel"><h4>Nuva</h4><span class="rel__role">Spatially fascinating, professionally irritating</span>
+            <p>She frequently asks where Azalea disappears to. Nuva answers nothing, and Alleen finds the silence structurally interesting.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="a-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>What holds the sky together</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>Her mastery was learned from a corpse</h4>
+            <p>Every spell she casts is built on the memory of reality dying. She did not study cosmic Weave; she read it off a collapsing dimension.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>She has never gone full cosmic in the New World</h4>
+            <p>The last complete manifestation was during the Breaking. Being a walking starfield while everything ended left a mark she addresses through restraint.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>The most ordered mind carries the most chaotic knowledge</h4>
+            <p>Her control is the discipline of someone who knows exactly how fragile the fabric is, holding it together through sheer refusal to let it slip again.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#gorath"><small>← Previous</small><strong>Gorath</strong></a>
+        <a href="commander.html#zargoth" style="text-align:right"><small>Next →</small><strong>Zar'goth</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ ZAR'GOTH ══════════ -->
+<div class="view" id="view-zargoth" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="zargoth-hero" data-fit="cover" data-label="Zar'goth · Dragon Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · The Aeries</p><h1>Zar'goth</h1>
+      <p class="hero__tag">He joined because the sky was on fire and he wanted to be part of it. Thirty-five thousand years later, the sky is quiet, and he is still waiting for the inferno to return.</p>
+      <ul class="chips"><li class="is-accent">The Sky-Scorcher</li><li>Ancient Black Dragon</li><li>Tier 8.0</li><li>Central Seam</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#z-over"><i>01</i>Overview</a></li><li><a href="#z-app"><i>02</i>Appearance</a></li>
+      <li><a href="#z-per"><i>03</i>Personality</a></li><li><a href="#z-voi"><i>04</i>Voice</a></li>
+      <li><a href="#z-cap"><i>05</i>Capabilities</a></li><li><a href="#z-his"><i>06</i>History</a></li>
+      <li><a href="#z-rel"><i>07</i>Relationships</a></li><li><a href="#z-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth" aria-current="page"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="z-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The fire that chose to burn</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · aerial wing</dd></div><div><dt>Age</dt><dd>≈ 35,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>Ancient Black Dragon</dd></div><div><dt>Tier</dt><dd><b>8.0</b> · Versatile</dd></div>
+          <div><dt>Seat</dt><dd>The Aeries, mountain roosts</dd></div><div><dt>Palace</dt><dd>None, by choice</dd></div>
+        </dl></aside>
+        <p class="lead">He understands the world as fuel and fire — everything is burning, waiting to burn, or already ash. One thing overrides that: the First King made destruction feel like purpose instead of entertainment.</p>
+        <p>His arrogance is genuine and functional. He is one of the most powerful individual combatants in Ruinea and knows it. What he does not know is how devotion exists without burning, and he has never understood how the First King managed it.</p>
+      </section>
+      <section class="sec" id="z-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>The one that darkens a battlefield, and the one that fits through a door</h2></div>
+        <p>Two shapes. He uses the second only when a roost is too small or a conversation requires a mouth at eye level.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Dragon Form</button>
+            <button class="forms__tab" type="button">Humanoid Form</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="zargoth-dragon" data-fit="cover" data-label="Dragon Form · 3:4"></div>
+              <h4>Obsidian, embers, torn shadow</h4>
+              <p>Fifty metres of obsidian-scaled dragon whose scales constantly drip molten fire that never extinguishes, embers trailing behind him in flight. His wings are like torn shadows, jagged at the edges, vast enough to darken a battlefield. Molten-gold eyes with vertical slit pupils. Horns curve back from the skull, cracked and veined with fire.</p>
+              <p>His jaw hangs slightly open at rest, embers spilling between the teeth. The voice is felt before it is heard — deep, rumbling, grinding stone — and he exhales smoke with every word when irritated.</p>
+              <div class="meta"><em>50 m</em><em>Molten-gold eyes</em><em>Ember trail</em><em>Thermal 1000°C</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="zargoth-humanoid" data-fit="cover" data-label="Humanoid Form · 3:4"></div>
+              <h4>Polite, for a volcano</h4>
+              <p>Two hundred and twenty centimetres, towering and broad, obsidian scales visible at the collar and wrists. The eyes stay molten-gold and the cracked black horns still sweep back from the temples, so there is no mistaking what is wearing the robe.</p>
+              <p>He wears simple black ash-stained robes, always slightly singed regardless of how recently they were replaced. The voice is the same grinding rumble, only slightly muffled. His aura reads as standing next to a volcano that has decided to be polite.</p>
+              <div class="meta"><em>≈220 cm</em><em>Scales at collar</em><em>Singed robes</em><em>Voice unchanged</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="zargoth-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">What the sky looks like before it burns</span>
+            <p>He leaves a visible trail of sparks and molten droplets in flight, readable from kilometres away. Stealth in the air is impossible, and he has never once attempted it.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="z-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Arrogant, and correct about it</h2></div>
+        <p class="lead">Impatient, territorial, loud when provoked and quiet when satisfied. He never turns his back to anyone he does not trust implicitly.</p>
+        <p>In combat he is theatrical and overwhelming, treating destruction as an art form. His rivalry with Kazagar is the closest thing he has to a friendship — two forces of nature arguing about who burns hotter, neither conceding.</p>
+        <p>Alone, he is contemplative and restless. He watches the sky for hours and remembers the Old World's burning skies with something like nostalgia.</p>
+      </section>
+      <section class="sec" id="z-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Felt in the chest before it is heard</h2></div>
+        <p>Deep, grinding, unhurried. Each sentence lands like a verdict from above, and the voice carries physical weight — listeners feel it behind the sternum. He exhales smoke when irritated, and the smoke punctuates the sentence whether he intends it to or not.</p>
+        <div class="quote"><p>“Look up.” <em>The sky darkens.</em> “That was your warning.”</p><footer><b>Frontline</b> — before engagement</footer></div>
+        <div class="quote"><p>“He burned brightest. Not hottest — <em>brightest</em>. There is a difference. I have been trying to explain that difference for eight thousand years.”</p><footer><b>Quiet</b> — on the First King</footer></div>
+        <div class="quote"><p>“I joined because the sky was on fire and I wanted to be part of it. That's all it was. That's all it's ever been.”</p><footer><b>Rare</b> — honest</footer></div>
+      </section>
+      <section class="sec" id="z-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Aerial supremacy</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="zargoth-ability" data-fit="cover" data-label="Wide banner · 16:9 · Burning Air"></div>
+        <p>Every engagement begins with height advantage. Forced ground combat reduces his effectiveness by a third, and he has never once chosen it willingly.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:80%"></i></div><span class="stat__v">8.0</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:74%"></i></div><span class="stat__v">7.4</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:79%"></i></div><span class="stat__v">7.9</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:77%"></i></div><span class="stat__v">7.7</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:80%"></i></div><span class="stat__v">8.0</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Sky-Scorch</h4><p class="ab__sub">Primary weapon</p>
+            <p>A sixty-metre cone of molten fire delivered at supersonic speed. The flame burns hotter than conventional Aether fire and leaves scorch that ignites anything it touches for minutes.</p>
+            <div class="ab__row"><b>Limit</b><span>Linear attack run; 300 m turning radius at speed.</span></div></article>
+          <article class="ab"><h4>Obsidian Wingstorm</h4><p class="ab__sub">3–4 per engagement</p>
+            <p>A 300 km/h hurricane of cutting obsidian shards and embers. Shreds fortifications and troops, and leaves a static field that interferes with Aether detection.</p>
+            <div class="ab__row"><b>Limit</b><span>Indiscriminate within 200 m; cannot be targeted.</span></div></article>
+          <article class="ab"><h4>Infernal Regeneration</h4><p class="ab__sub">Passive</p>
+            <p>Molten fire in the scales repairs any wound within thirty seconds — unless it was caused by pure Void energy or extreme cold.</p></article>
+          <article class="ab"><h4>Molten Vein Pulse</h4><p class="ab__sub">Passive · side effect of flight</p>
+            <p>Ground he passes over cracks and erupts in lava bursts that persist for minutes. He has no control over placement, and has never needed any.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="z-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Chasing a burning sky</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>Fire without limit</h4>
+            <p>Where other dragons fought to protect the world, he fought because the war was glorious. He is the embodiment of the dragons who chose destruction over preservation, and has never apologised.</p></div>
+          <div class="tl__item"><span class="tl__when">The demon banner</span><h4>Kindred spirits</h4>
+            <p>He saw beings who understood that war is the purest expression of existence, and joined without hesitation. His aerial assaults were among the most devastating elements of the war machine.</p></div>
+          <div class="tl__item"><span class="tl__when">1500–1715 EK</span><h4>The Aerial Wing</h4>
+            <p>Wyverns and lesser dragons under his beastmasters: supply runs, scouting, and the terror raids that kept the coalition's sky empty.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — Malakh-Kar</span><h4>He watched from above</h4>
+            <p>He witnessed the First King's fall from the air and chose not to intervene. It was single combat against seven heroes, and he respects the terms of that engagement. He does not speak of it.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="z-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>Rivals, followers, a sleeping king</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>The First King</h4><span class="rel__role">The only worthy command</span>
+            <p>Absolute devotion to the one being whose fire he considers brighter than his own. He waits for the king to wake and finish what they started.</p></article>
+          <article class="rel"><h4>Kazagar</h4><span class="rel__role">Heated rivalry · closest thing to a friend</span>
+            <p>Two immovable forces that have never settled their score. They argue about who burns hotter and neither has conceded a point in six thousand years.</p></article>
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">Respect, with reservations</span>
+            <p>He respects her strength and thinks she has gone soft. He tolerates her rule because she has not given him reason to challenge it.</p></article>
+          <article class="rel"><h4>The Lost</h4><span class="rel__role">His war-band, his family</span>
+            <p>The dragons who followed him from the Old World. The only beings he protects without being asked.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="z-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>The quiet he cannot admit to</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>He envies devotion he cannot feel</h4>
+            <p>He has never understood how loyalty can exist without fire. His own burns, and he assumes everyone's does.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>The most destructive dragon watches sunsets with visible sadness</h4>
+            <p>The New World's sky is too clean, too quiet. He misses the burning, and would never say so aloud.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#alleen"><small>← Previous</small><strong>Alleen</strong></a>
+        <a href="commander.html#vexia" style="text-align:right"><small>Next →</small><strong>Vexia</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ VEXIA ══════════ -->
+<div class="view" id="view-vexia" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="vexia-hero" data-fit="cover" data-label="Vexia · Elite Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Silkhaven</p><h1>Vexia</h1>
+      <p class="hero__tag">She founded a rebellion out of boredom and considers that the most honest thing about her. Twenty thousand years of secrets, and not one of them examined from the inside.</p>
+      <ul class="chips"><li class="is-accent">The Quiet Broker</li><li>Pure Demon · Elite Path</li><li>Tier 7.8</li><li>Central Belt</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#x-over"><i>01</i>Overview</a></li><li><a href="#x-app"><i>02</i>Appearance</a></li>
+      <li><a href="#x-per"><i>03</i>Personality</a></li><li><a href="#x-voi"><i>04</i>Voice</a></li>
+      <li><a href="#x-cap"><i>05</i>Capabilities</a></li><li><a href="#x-his"><i>06</i>History</a></li>
+      <li><a href="#x-rel"><i>07</i>Relationships</a></li><li><a href="#x-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia" aria-current="page"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="x-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The web that catches without touching</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · espionage</dd></div><div><dt>Alias</dt><dd>Lady Violetta</dd></div>
+          <div><dt>Age</dt><dd>≈ 20,000+ yrs</dd></div><div><dt>Race</dt><dd>Pure Demon, Elite Path</dd></div>
+          <div><dt>Tier</dt><dd><b>7.8</b> · Magician / Assassin</dd></div><div><dt>Seat</dt><dd>Silkhaven</dd></div>
+        </dl></aside>
+        <p class="lead">She understands the world as information asymmetry. Power is not strength — power is the gap between what you know and what they know.</p>
+        <p>The Revisionist Faction exists because stagnation bored her. Not ideology, not morality: she founded it to introduce variables into a predictable system and watch what happens. Every member believes they serve a cause. Vexia serves her own curiosity.</p>
+      </section>
+      <section class="sec" id="x-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Four faces, one of them hers</h2></div>
+        <p>The fan is a prop. The shadow is not. Which of the four you meet depends entirely on whether she has decided you are worth the truth.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Lady Violetta</button>
+            <button class="forms__tab" type="button">Partial Shadow</button>
+            <button class="forms__tab" type="button">Full Darkness</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="vexia-elite" data-fit="cover" data-label="Elite Form · 3:4"></div>
+              <h4>Absence, wearing a gown</h4>
+              <p>Living purple flames where eyes should be, unblinking, casting a faint violet light on whatever she is looking at. Long dark-purple hair drips with living shadow — the strands move as if underwater even in still air, and the darkness around her hairline is several shades deeper than ambient.</p>
+              <p>Small delicate bat-like wings fold against her back, dark-purple veined with black. She has no horns, a physiological anomaly among Pure Demons that she has never explained and nobody has asked about twice. Her aura reads as absence: sound dampens within two metres, and peripheral vision loses track of her edges.</p>
+              <div class="meta"><em>≈175 cm</em><em>Purple flame eyes</em><em>Bat wings</em><em>No horns</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-violetta" data-fit="cover" data-label="Lady Violetta · 3:4"></div>
+              <h4>The widow with the fan</h4>
+              <p>The wings vanish. The shadow in her hair settles into ordinary dark-purple locks, the flame dims to deep amethyst, and the aura suppresses to social-norm levels. Luxurious violet-and-black silk, lace elbow-gloves, and a folding fan — black on one side, deep violet on the other.</p>
+              <p>She reads as a wealthy mortal noblewoman with a very good memory for names. She laughs easily and genuinely, touches people's arms when making a point, and bites her lower lip when pretending to think. The room is won within minutes.</p>
+              <div class="meta"><em>Mortal-passing</em><em>Fan: black / violet</em><em>Aura suppressed</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-partial" data-fit="cover" data-label="Partial Shadow Manifestation · 3:4"></div>
+              <h4>Bleeding into the dark</h4>
+              <p>Individual elements overflow into pure shadow. Her hair extends into tendrils of living darkness that move independently; her hands become silhouettes of solidified shadow, fingertips trailing wisps; her eyes become voids with purple flame burning deep inside.</p>
+              <p>Shadows within fifty metres respond to her will without contact. She maintains full consciousness and full social composure throughout — the smile never changes, which is the part that unsettles people.</p>
+              <div class="meta"><em>Shadow reach 50 m</em><em>Composure intact</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="vexia-monstrous" data-fit="cover" data-label="Full Darkness Manifestation · 3:4"></div>
+              <h4>Night, given a shape</h4>
+              <p>A humanoid silhouette of absolute darkness, edges dissolving and reforming, cut from the fabric of night itself. The face is a smooth void with two points of purple flame. Bat-like wings expand to a twelve-metre span, layered shadow that drinks light rather than blocking it.</p>
+              <p>She generates a field of darkness within one hundred metres where all light dies, sound ceases, and spatial perception collapses for Tier 6 and below. Her aura registers as the dark between stars given form — primordial, patient, ancient. She finds the shape crude, because darkness is most effective when it is invisible.</p>
+              <div class="meta"><em>≈250 cm</em><em>12 m span</em><em>Lightless field 100 m</em><em>Rarely used</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="vexia-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The shadow that does not match</span>
+            <p>Her illusions cast no shadow of their own. It is the only tell she has ever left behind, and it is visible solely to people who already know to look for a missing shape on the floor.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="x-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Cruel without malice</h2></div>
+        <p class="lead">Insatiably curious, endlessly patient, and bored the way other people are hungry. She collects secrets the way others collect coins.</p>
+        <p>As Vexia she is cold and slower, each sentence a blade wrapped in velvet. As Lady Violetta she is warm and magnetic, laughing easily, winning rooms within minutes — every question a probe in disguise.</p>
+        <p>Alone she studies the darkness around her the way a musician studies an instrument. Occasionally the shadows answer.</p>
+      </section>
+      <section class="sec" id="x-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Sibilant, and never raised</h2></div>
+        <p>Sibilant, whispery, smooth as silk, and never raised. As Vexia the words land like blades wrapped in velvet, each sentence deliberate and slow. As Lady Violetta the tone turns warm and playful, and every question is a probe wearing a compliment.</p>
+        <div class="quote"><p>“Your plan has four exits. I have occupied three.” <em>The shadows at her feet deepen.</em> “Choose the fourth while it exists.”</p><footer><b>Vexia</b> — assessing</footer></div>
+        <div class="quote"><p>“Boredom is the only sin I cannot forgive in myself. The faction is an antidote.” <em>Silent laughter.</em> “You already knew. The question is what you plan to do with it — and I find that question <em>delightful</em>.”</p><footer><b>Vexia</b> — to Alleen</footer></div>
+        <div class="quote"><p>“You are the only thing in this nation I have not figured out. Do not mistake my patience for indifference — I have waited three thousand years, and I can wait three more.”</p><footer><b>Rare</b> — to Azalea</footer></div>
+      </section>
+      <section class="sec" id="x-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Darkness as epistemology</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="vexia-ability" data-fit="cover" data-label="Wide banner · 16:9 · Silk and Shadow"></div>
+        <p>She never engages in fair fights. The fight begins before the target knows it has started, and the darkness is already on her side of the board.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:67%"></i></div><span class="stat__v">6.7</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:75%"></i></div><span class="stat__v">7.5</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:61%"></i></div><span class="stat__v">6.1</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:70%"></i></div><span class="stat__v">7.0</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:78%"></i></div><span class="stat__v">7.8</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Shadow Meld</h4><p class="ab__sub">Primary infiltration tool</p>
+            <p>Merges into any shadow within line of sight — invisible and intangible, undetectable by magic, able to emerge from any darkness within five hundred metres.</p>
+            <div class="ab__row"><b>Limit</b><span>Ten minutes continuous; absolute light forces materialisation.</span></div></article>
+          <article class="ab"><h4>Darkness Dominion</h4><p class="ab__sub">Circle High 8 · 500 m</p>
+            <p>Absolute control over shadow: blades, barriers, restraints, tendrils, sensory dead zones. She can consume ambient light to extend darkness into lit space.</p></article>
+          <article class="ab"><h4>Perfect Illusion Weaving</h4><p class="ab__sub">Shadowcraft</p>
+            <p>Disguises and hallucinations convincing in touch, sound, and smell, maintained across dozens of identities at once. Illusions cast no shadow of their own.</p>
+            <div class="ab__row"><b>Tell</b><span>Only visible to those who know to look for the missing shadow.</span></div></article>
+          <article class="ab"><h4>Surface Telepathy</h4><p class="ab__sub">Shadow Whisper</p>
+            <p>Reads surface thoughts and plants doubts that feel like the target's own thinking. Fails against Vorlag's ward and against Nuva's dimensional offset.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="x-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>An invisible architect</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 28,000 BR</span><h4>Born to the dark</h4>
+            <p>Shadows responded to her before she had words, and the dark around her cradle moved when she dreamed. Other demons sharpened claws; she lingered in corners.</p></div>
+          <div class="tl__item"><span class="tl__when">The War of the Gods</span><h4>The web before the battle</h4>
+            <p>She disassembled enemy command structures from within before the armies ever met. No one knew her name; everyone felt her touch.</p></div>
+          <div class="tl__item"><span class="tl__when">≈ 12,000–0 BR — The Breaking</span><h4>Darkness in the cracks</h4>
+            <p>She watched shadow pool between collapsing dimensions and understood something new: shadow is not the absence of light but the space between things — the gaps where truth hides.</p></div>
+          <div class="tl__item"><span class="tl__when">1715 EK — after</span><h4>Silkhaven and the Revisionists</h4>
+            <p>Azalea offered a seat after a year of silent observation. Vexia accepted because the offer was interesting. The faction came later, founded to cure a boredom no one else could see.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="x-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>Everyone is a piece, except one</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">The only unread page</span>
+            <p>Loyal only while Azalea remains fascinating. She suspects the Unraveler hides something fundamental and pursues the thread for pure intrigue.</p></article>
+          <article class="rel"><h4>Alleen</h4><span class="rel__role">Mutual transparent awareness</span>
+            <p>Alleen knows about the faction. Vexia knows Alleen knows. Neither has acted. Polite chess where both see the whole board.</p></article>
+          <article class="rel"><h4>Nuva</h4><span class="rel__role">The one blind spot</span>
+            <p>Nuva's dimensional offset disrupts shadow perception. Vexia cannot track her the way she tracks everyone else, and it unsettles her badly.</p></article>
+          <article class="rel"><h4>Vorlag</h4><span class="rel__role">Avoided entirely</span>
+            <p>His Immutable Ward makes him immune to every tool in her portfolio. The one shadow that does not move when she commands it.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="x-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>The web with no edge</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>The faction is boredom wearing a cause</h4>
+            <p>She founded it to introduce chaos into a predictable system and observe. She has never believed in it for a single hour.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>She has lost track of her own network</h4>
+            <p>Sections of the web she has been expanding for millennia are no longer mapped. She is not certain what lives in the deepest parts.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>The most informed being knows least about herself</h4>
+            <p>Twenty-eight thousand years cataloguing everyone else's secrets, and never once her own. The day she does, she will find that curiosity is not a personality trait — it is the only thing keeping her from becoming what she hunts.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#zargoth"><small>← Previous</small><strong>Zar'goth</strong></a>
+        <a href="commander.html#silphira" style="text-align:right"><small>Next →</small><strong>Silphira</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ SILPHIRA ══════════ -->
+<div class="view" id="view-silphira" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="silphira-hero" data-fit="cover" data-label="Silphira · Elite Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · Vaelthorn</p><h1>Silphira</h1>
+      <p class="hero__tag">The only commander who makes cruelty feel like intimacy. Fifteen thousand years of taking minds apart, and the only question she has never answered is why people love each other.</p>
+      <ul class="chips"><li class="is-accent">The Whisper</li><li>Ancient Demon · Elite Path</li><li>Tier 7.7</li><li>Central Belt</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#s-over"><i>01</i>Overview</a></li><li><a href="#s-app"><i>02</i>Appearance</a></li>
+      <li><a href="#s-per"><i>03</i>Personality</a></li><li><a href="#s-voi"><i>04</i>Voice</a></li>
+      <li><a href="#s-cap"><i>05</i>Capabilities</a></li><li><a href="#s-his"><i>06</i>History</a></li>
+      <li><a href="#s-rel"><i>07</i>Relationships</a></li><li><a href="#s-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira" aria-current="page"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="s-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The flame moths cannot resist</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Commander · psychological warfare</dd></div><div><dt>Age</dt><dd>≈ 15,000+ yrs</dd></div>
+          <div><dt>Race</dt><dd>Ancient Demon, Elite Path</dd></div><div><dt>Tier</dt><dd><b>7.7</b> · Speedster</dd></div>
+          <div><dt>Seat</dt><dd>Vaelthorn, dead valley</dd></div><div><dt>Tell</dt><dd>Head tilts mid-sentence</dd></div>
+        </dl></aside>
+        <p class="lead">She does not view cruelty as cruelty. Disassembly is research, and desire is her sharpest tool — fear builds walls, but desire makes people open the door themselves.</p>
+        <p>Born monstrous and instinct-heavy, she catalogued demon behaviour for centuries until no variation remained. Then humans broke her framework: afraid and advancing anyway, weeping over enemies, loving people who hurt them. So she stopped killing them quickly.</p>
+      </section>
+      <section class="sec" id="s-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>Built by observation</h2></div>
+        <p>Born monstrous, her form restructured itself over millennia around the shapes she watched most. Beauty calibrated to attract, wrongness calibrated to unsettle. The flame moths cannot resist.</p>
+        <div class="forms" data-forms>
+          <div class="forms__tabs">
+            <button class="forms__tab is-active" type="button">Elite Form</button>
+            <button class="forms__tab" type="button">Partial Wing Unfurl</button>
+            <button class="forms__tab" type="button">Full Manifestation</button>
+          </div>
+          <div class="forms__panels">
+            <article class="panel is-active">
+              <div class="ph" data-img="silphira-elite" data-fit="cover" data-label="Elite Form · 3:4"></div>
+              <h4>Symmetry that registers as wrong</h4>
+              <p>Pale white skin, faintly luminous in low light. Black pupil-less eyes that reflect nothing. The face is sharp and angular — high cheekbones, pointed chin, narrow nose — arranged with a symmetry that reads as <em>wrong</em> on instinct: too smooth, too inviting.</p>
+              <p>Four moth wings folded at rest, velvety deep purple and black, with iridescent eyespots that shift when not directly observed. She wears a simple black and white high-collared dress — a gift from Nuva — and soft-soled shoes. Her aura reads as warmth and invitation: the pull of food when hungry, of laughter in an empty house.</p>
+              <div class="meta"><em>≈180 cm</em><em>Pupil-less eyes</em><em>Four moth wings</em><em>Desire aura 50 m</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="silphira-wings" data-fit="cover" data-label="Partial Wing Unfurl · 3:4"></div>
+              <h4>The pattern, fully visible</h4>
+              <p>Wings spread to three metres, the full hypnotic pattern on display, eyespots glowing faintly and releasing psychoactive dust into a twenty-metre radius. The head tilts like a predator watching prey approach voluntarily.</p>
+              <p>Her aura shifts from subtle pull to active desire. Loneliness becomes desperate need, anger becomes consuming rage, affection becomes obsession. Her composure holds completely — the smile constant, the posture unhurried, the voice still sweet.</p>
+              <div class="meta"><em>3 m span</em><em>Dust 20 m</em><em>Composure intact</em></div>
+            </article>
+            <article class="panel">
+              <div class="ph" data-img="silphira-monstrous" data-fit="cover" data-label="Full Succubus Manifestation · 3:4"></div>
+              <h4>Maximum attraction, maximum wrongness</h4>
+              <p>Two hundred and fifty centimetres, elongated and inhuman, curves and angles arranged for both attraction and wrongness at once. The skin turns faintly translucent, bioluminescent violet veins pulsing like a heartbeat. Four wings reach a twelve-metre span, and each eyespot becomes a miniature psychic construct that moves and blinks on its own. Six smaller wings sprout from the lower back, vibrating at frequencies that disrupt higher thought.</p>
+              <p>The face is a mask, shifting to match whatever the observer finds most attractive — every person sees a different one. Her aura becomes psychic gravity within one hundred metres. Tier 6 and below lose motor control within thirty metres; Tier 7+ suffer compulsive fascination and lose a fifth of their combat effectiveness.</p>
+              <div class="meta"><em>≈250 cm</em><em>12 m span</em><em>Face shifts per observer</em><em>Gravity 100 m</em></div>
+            </article>
+          </div>
+        </div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="silphira-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The eyespots watch back</span>
+            <p>Prolonged gaze at the wing patterns produces mild euphoria and suggestibility in Tier 5 and below. The eyespots shift when unobserved, which means the pattern on her wings is never the same twice — a detail no one has survived confirming.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="s-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Cheerful in the way of things without frameworks</h2></div>
+        <p class="lead">Warm in delivery and cold in intent. Fascinated by minds that resist, bored by minds that break quickly, easily distracted by complexity.</p>
+        <p>In combat she is patient, theatrical, seductive, and never in a hurry. She circles before engaging and touches her targets gently first — the contact is real and warm, which makes what follows worse.</p>
+        <p>Alone, she arranges her mind-crystals in geometric patterns and polishes each on a schedule. When one flickers — a preserved mind dreaming — she watches it head-tilted, wings still, entirely absorbed.</p>
+      </section>
+      <section class="sec" id="s-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Two pitches, slightly offset</h2></div>
+        <p>Melodic, with two pitches slightly offset — a subliminal warmth followed by a subliminal nausea. Sweet in register, precise in content, and always slightly too close. The discomfort arrives after the sentence, not during it.</p>
+        <div class="quote"><p>“Oh — you have such <em>interesting</em> eyes. What are you afraid of? No, don't tell me — let me guess. It's more fun when I guess.”</p><footer><b>Before engaging</b></footer></div>
+        <div class="quote"><p>“They're not dead. Their minds are — resting. I play their favorite memories sometimes. The one with the sunset and the woman singing — that one always makes the crystal warm.” <em>A pause.</em> “Is that kindness? I don't have a word for it.”</p><footer><b>Tender</b> — on the collection</footer></div>
+        <div class="quote"><p>“I stopped being surprised by pain a long time ago. Now what surprises me is when someone keeps going anyway. That's the part I can't stop watching.”</p><footer><b>Rare</b> — honest</footer></div>
+      </section>
+      <section class="sec" id="s-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Combat as seduction</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="silphira-ability" data-fit="cover" data-label="Wide banner · 16:9 · Mothlight"></div>
+        <p>Her attack is often the third thing she does. The first two made it inevitable.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:62%"></i></div><span class="stat__v">6.2</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:77%"></i></div><span class="stat__v">7.7</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:60%"></i></div><span class="stat__v">6.0</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:65%"></i></div><span class="stat__v">6.5</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:70%"></i></div><span class="stat__v">7.0</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Lullaby of the Broken Mind</h4><p class="ab__sub">Voice Weave · 15 m</p>
+            <p>Plants fears, false memories, apathy, or desire calibrated to the target. Victims cannot distinguish the whisper from their own thoughts.</p>
+            <div class="ab__row"><b>Limit</b><span>Covering the ears before the first syllable breaks the link.</span></div></article>
+          <article class="ab"><h4>Wing-Shroud Veil</h4><p class="ab__sub">Full 3 m span · 20 m dust</p>
+            <p>Psychoactive dust amplifies existing emotion: loneliness becomes desperate need, anger becomes rage, affection becomes obsession.</p>
+            <div class="ab__row"><b>Cost</b><span>Temporarily deaf for ninety seconds after deployment.</span></div></article>
+          <article class="ab"><h4>Fractured Reflection</h4><p class="ab__sub">Requires 2s contact</p>
+            <p>Imprints one traumatic memory from her collection at full intensity. Focus collapses for four to six seconds — spells fail, weapons drop, stances break.</p></article>
+          <article class="ab"><h4>Moth's Flame</h4><p class="ab__sub">30s sustained contact</p>
+            <p>Siphons emotional vitality — joy flattens, motivation fades, what they loved becomes distant. It never kills; recovery takes weeks or months.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="s-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Becoming what she studied</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 15,000 BR</span><h4>Monstrous, and bored</h4>
+            <p>Born through reproduction among the earliest demon lines. She catalogued behaviour on the Old World's battlefields until no variation remained. Efficient, devastating, and bored.</p></div>
+          <div class="tl__item"><span class="tl__when">1500–1715 EK</span><h4>Humans broke the framework</h4>
+            <p>She stopped killing them quickly and began engineering situations that kept subjects alive longer — studying the architecture of feeling.</p></div>
+          <div class="tl__item"><span class="tl__when">The evolution</span><h4>She did not choose succubus</h4>
+            <p>Her form restructured itself around the shapes she watched most. She became it by watching love and wanting to understand it.</p></div>
+          <div class="tl__item"><span class="tl__when">After 1715 EK</span><h4>Vaelthorn</h4>
+            <p>Appointed for her rarity — one who combines fear and desire into a single discipline. The isolated spire-city, one road, moth-wing banners, corridors arranged to make visitors lose direction.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="s-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>The only people she is gentle with</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>The preserved minds</h4><span class="rel__role">Her only genuine relationships</span>
+            <p>She knows every name, every fear, every favourite memory. She treats them better than anyone alive — and harming a crystal produces a grief response even Kazagar finds unsettling.</p></article>
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">A flaw that makes the instrument interesting</span>
+            <p>She has noticed the pastries, the gardenias, the wanderer disappearances. She has not probed — solving the puzzle would kill the mystery.</p></article>
+          <article class="rel"><h4>Nuva</h4><span class="rel__role">Unreadable, therefore attractive</span>
+            <p>Dimensional offset makes Nuva invisible to her psychic tools. The one mind she cannot perceive, and that is both annoying and compelling.</p></article>
+          <article class="rel"><h4>Vorlag</h4><span class="rel__role">Drawn to the wound she cannot touch</span>
+            <p>His Immutable Ward makes her tools useless, and he carries one absolute wound she can never reach. The frustration is almost romantic.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="s-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>The tragedy she will never engineer</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>Every seduction is research</h4>
+            <p>She does not understand love and has spent fifteen thousand years trying. Her body was built to inspire desire by someone who cannot comprehend it.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>The collection became a family</h4>
+            <p>It started as data. She has never acknowledged the transition, and would be devastated if anyone named it aloud.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>The cruellest predator most wants to understand why people love</h4>
+            <p>The gap between what she does and what she wants is the only tragedy she will never engineer.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#vexia"><small>← Previous</small><strong>Vexia</strong></a>
+        <a href="commander.html#nuva" style="text-align:right"><small>Next →</small><strong>Nuva</strong></a></nav>
+    </main>
+  </div>
+</div>
+
+<!-- ══════════ NUVA ══════════ -->
+<div class="view" id="view-nuva" hidden>
+  <header class="hero"><div class="hero__in">
+    <div class="hero__art"><div class="ph" data-img="nuva-hero" data-fit="cover" data-label="Nuva · Elite Form · 3:4"></div></div>
+    <div><p class="eyebrow">Commander · No Territory</p><h1>Nuva</h1>
+      <p class="hero__tag">She exists one step outside the room at all times, and has never once used that distance to leave. Her oath was not sworn to the living.</p>
+      <ul class="chips"><li class="is-accent">The Shadow That Answers</li><li>Ancient Demon · Elite Path</li><li>Tier 7.6</li><li>No Territory</li></ul></div>
+  </div></header>
+  <div class="layout">
+    <aside class="side"><h2>Contents</h2><nav class="toc"><ol>
+      <li><a href="#n-over"><i>01</i>Overview</a></li><li><a href="#n-app"><i>02</i>Appearance</a></li>
+      <li><a href="#n-per"><i>03</i>Personality</a></li><li><a href="#n-voi"><i>04</i>Voice</a></li>
+      <li><a href="#n-cap"><i>05</i>Capabilities</a></li><li><a href="#n-his"><i>06</i>History</a></li>
+      <li><a href="#n-rel"><i>07</i>Relationships</a></li><li><a href="#n-tru"><i>08</i>Truths</a></li>
+    </ol></nav>
+    <nav class="roster"><h2>Commanders</h2><ol>
+      <li><a href="commander.html#azalea"><span class="av"></span><span class="nm">Azalea</span><span class="t">8.9</span></a></li>
+      <li><a href="commander.html#vorlag"><span class="av"></span><span class="nm">Vorlag</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#kazagar"><span class="av"></span><span class="nm">Kazagar</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#gorath"><span class="av"></span><span class="nm">Gorath</span><span class="t">8.7</span></a></li>
+      <li><a href="commander.html#alleen"><span class="av"></span><span class="nm">Alleen</span><span class="t">8.6</span></a></li>
+      <li><a href="commander.html#zargoth"><span class="av"></span><span class="nm">Zar'goth</span><span class="t">8.0</span></a></li>
+      <li><a href="commander.html#vexia"><span class="av"></span><span class="nm">Vexia</span><span class="t">7.8</span></a></li>
+      <li><a href="commander.html#silphira"><span class="av"></span><span class="nm">Silphira</span><span class="t">7.7</span></a></li>
+      <li><a href="commander.html#nuva" aria-current="page"><span class="av"></span><span class="nm">Nuva</span><span class="t">7.6</span></a></li>
+    </ol></nav></aside>
+    <main>
+      <section class="sec" id="n-over"><div class="sec__head"><span class="sec__kick">01 — Overview</span><h2>The shadow between worlds</h2></div>
+        <aside class="infobox"><h3>Record</h3><dl>
+          <div><dt>Role</dt><dd>Assassin · maid · confidant</dd></div>
+          <div><dt>Age</dt><dd>≈ 4,500 yrs</dd></div>
+          <div><dt>Race</dt><dd>Ancient Demon, Elite Path</dd></div>
+          <div><dt>Tier</dt><dd><b>7.6</b> · Assassin</dd></div>
+          <div><dt>Territory</dt><dd>None</dd></div>
+          <div><dt>Answers to</dt><dd>Azalea alone</dd></div>
+        </dl></aside>
+        <p class="lead">She processes existence as architecture — spaces, gaps, distances, load points. She reads rooms the way other people read faces, finding the holes instinctively.</p>
+        <p>Her self-concept is defined entirely by function: Azalea's shadow, Azalea's blade, Azalea's silence. Purpose is presence. To be somewhere is to matter; to leave is to cease. This is why she has never stepped through a dimensional gap to <em>leave</em>, only to hide.</p>
+      </section>
+      <section class="sec" id="n-app"><div class="sec__head"><span class="sec__kick">02 — Appearance</span><h2>One form, held for four thousand years</h2></div>
+        <p>The second exists. She has never opened it. Not once since the day Azarin and Kalea died — the refusal is her final act of respect to the only parents she knew.</p>
+        <div class="ph" style="aspect-ratio:3/4;width:min(320px,74vw);margin:0 auto 22px;border-radius:14px" data-img="nuva-form" data-fit="cover" data-label="Elite Form · the only one she wears"></div>
+        <p>Slender and willowy with a modest chest, narrow waist, and long limbs. Pale-bone skin, flawless and cool. Short white hair, clean-cut and swept slightly left. Tiny curved ram horns, dark-grey, barely visible above the hairline. Silver eyes, flat and unreadable. She wears immaculate black-and-white maid attire — long dress, crisp white apron, high collar, never wrinkled — and soft-soled shoes that make no sound.</p>
+        <p>Her aura sits at near-zero baseline. It registers only as a faint wrongness at the edge of vision, a sense that the space she occupies is slightly thinner than it should be. Twin matte-black daggers rest sheathed beneath the apron on each hip; they are never drawn in public. A small wooden hairpin carved by Kalea is tucked under her hair and has never been removed.</p>
+        <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;justify-content:center"><em>≈175 cm</em><em>Silver eyes</em><em>Ram horns</em><em>Aura: near-zero</em><em>Kalea's hairpin</em></div>
+        <figure class="plate">
+          <div class="plate__fig"><div class="ph" data-img="nuva-cinematic" data-fit="cover" data-label="Cinematic plate · 16:9"></div></div>
+          <figcaption><span class="plate__label">The door she has never opened</span>
+            <p>The monstrous potential is still inside her, locked and untested. She does not know whether it is sealed or whether she is simply holding it shut, and she has never asked herself which — because the answer might require opening it to find out.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="sec" id="n-per"><div class="sec__head"><span class="sec__kick">03 — Personality</span><h2>Grief in maintenance</h2></div>
+        <p class="lead">She grieves by polishing the hairpin, preparing Azalea's food, and standing slightly outside the room. The grief has no language because she lost her language for feeling when she lost them.</p>
+        <p>With Azalea she is devoted, soft-voiced, attentive, quietly gentle, selfless to the point of invisibility. On a mission she is mechanical: silent, precise, thorough, leaving no evidence. In public she is forgettable by design.</p>
+        <p>She has never asked herself why she refuses to transform. If she did, she would find Azarin's voice saying <em>you are enough as you are</em>, and she would not survive the discovery.</p>
+      </section>
+      <section class="sec" id="n-voi"><div class="sec__head"><span class="sec__kick">04 — Voice</span><h2>Words arrive a fraction before her mouth moves</h2></div>
+        <p>Soft, even, formal. The bare minimum of words, and the volume never rises. She deflects personal questions by redirecting to Azalea's needs, and her voice carries a faint residual dissonance — words arriving a fraction of a second before her mouth moves.</p>
+        <div class="quote"><p>“They kept me. When everyone else said no. That is the whole of it.”</p><footer><b>Flat</b> — on Azarin and Kalea</footer></div>
+        <div class="quote"><p>“I swore. Not to her. To them.” <em>Long silence.</em> “She is what's left.”</p><footer><b>When pressed</b> — on the oath</footer></div>
+        <div class="quote"><p>“You haven't eaten. I brought the ones with sugar.” <em>Sets them down. Steps back. Arranges nothing.</em></p><footer><b>Gentle</b> — to Azalea</footer></div>
+        <div class="quote"><p>“That body is not mine. My body is the one they saved.”</p><footer><b>Quiet</b> — on Monstrous Form</footer></div>
+      </section>
+      <section class="sec" id="n-cap"><div class="sec__head"><span class="sec__kick">05 — Capabilities</span><h2>Never in the same space as the fight</h2></div>
+        <div class="ph ph--wide" style="margin-bottom:24px" data-img="nuva-ability" data-fit="cover" data-label="Wide banner · 16:9 · The Open Door"></div>
+        <p>Full-body displacement to open, a single blade-arm re-materialised from a blind angle, strike, displace again. The target registers the wound before registering her. She never stays visible longer than two seconds per strike cycle.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat__k">STR</span><div class="stat__bar"><i style="--v:70%"></i></div><span class="stat__v">7.0</span></div>
+          <div class="stat"><span class="stat__k">SPD</span><div class="stat__bar"><i style="--v:76%"></i></div><span class="stat__v">7.6</span></div>
+          <div class="stat"><span class="stat__k">DUR</span><div class="stat__bar"><i style="--v:61%"></i></div><span class="stat__v">6.1</span></div>
+          <div class="stat"><span class="stat__k">STA</span><div class="stat__bar"><i style="--v:73%"></i></div><span class="stat__v">7.3</span></div>
+          <div class="stat"><span class="stat__k">MAG</span><div class="stat__bar"><i style="--v:71%"></i></div><span class="stat__v">7.1</span></div>
+        </div>
+        <h3>Signature capabilities</h3>
+        <div class="abilities">
+          <article class="ab"><h4>Dimensional Shift · Full</h4><p class="ab__sub">Signature</p>
+            <p>The entire body displaces into a dimensional gap — invisible and intangible here. Senses, detection magic, and Aether scans return nothing, because she exists elsewhere.</p>
+            <div class="ab__row"><b>Limit</b><span>Five minutes continuous; cannot touch the world while shifted.</span></div>
+            <div class="ab__row ab__row--story"><b>Story</b><span>The reason she cannot be found, mapped, or predicted.</span></div></article>
+          <article class="ab"><h4>Dimensional Shift · Partial</h4><p class="ab__sub">Defensive</p>
+            <p>Individual body parts displace while the rest stays physical. Incoming attacks pass through the missing portion harmlessly.</p>
+            <div class="ab__row"><b>Limit</b><span>Three parts maximum; requires awareness of the attack.</span></div></article>
+          <article class="ab"><h4>Dimensional Step</h4><p class="ab__sub">15 m</p>
+            <p>Short-range displacement without traversing the space between. Four consecutive steps before a three-second cooldown.</p></article>
+          <article class="ab"><h4>Perfect Memory</h4><p class="ab__sub">Passive</p>
+            <p>Every word, face, secret, and combat pattern is retained perfectly. Every fight she survives makes her exponentially more dangerous.</p>
+            <div class="ab__row ab__row--story"><b>Story</b><span>She never makes the same mistake twice.</span></div></article>
+        </div>
+      </section>
+      <section class="sec" id="n-his"><div class="sec__head"><span class="sec__kick">06 — History</span><h2>Saved by people who had nothing</h2></div>
+        <div class="tl">
+          <div class="tl__item"><span class="tl__when">≈ 2,100 BR</span><h4>The storm</h4>
+            <p>An Ancient Demon raised in the war-bands, caught in the collapse of a dimensional boundary. The exposure nearly killed her and threw her across the tear into drifting fragments.</p></div>
+          <div class="tl__item"><span class="tl__when">The sheltering</span><h4>They kept her</h4>
+            <p>Azarin and Kalea found her broken and clearly not human, and took her in anyway. A week later their group discovered her, and offered a choice: kill the child, or leave. They left.</p></div>
+          <div class="tl__item"><span class="tl__when">Twenty years</span><h4>Learning to hunt</h4>
+            <p>Azalea appeared in Elite Form, offered protection, and was accepted. Nuva recovered, grew, and learned to hunt under Azalea's direct teaching. The family survived on what she caught.</p></div>
+          <div class="tl__item"><span class="tl__when">The end of it</span><h4>The oath</h4>
+            <p>A monster found the shelter while Azalea was absent. Nuva killed it after a brutal fight. Azarin and Kalea died shielding her. She sat motionless before their bodies until Azalea came, and swore an oath of permanent presence that has never been broken.</p></div>
+        </div>
+      </section>
+      <section class="sec" id="n-rel"><div class="sec__head"><span class="sec__kick">07 — Relationships</span><h2>One bond, and a wall of silence</h2></div>
+        <div class="rels">
+          <article class="rel"><h4>Azalea</h4><span class="rel__role">The being she swore to</span>
+            <p>Absolute loyalty and absolute presence. She is the only living being who has seen all three forms and knows the wanderer's true identity, and she guards that without being asked.</p></article>
+          <article class="rel"><h4>Azarin &amp; Kalea</h4><span class="rel__role">Deceased · her parents</span>
+            <p>She carries Kalea's wooden hairpin every day and has never spoken their names aloud to anyone but Azalea. The oath is addressed to them, even now.</p></article>
+          <article class="rel"><h4>Alleen</h4><span class="rel__role">Professional respect</span>
+            <p>Alleen often asks where Azalea disappears to. Nuva answers nothing, and the nothing is completely polite.</p></article>
+          <article class="rel"><h4>Vexia</h4><span class="rel__role">Mutual blind spot</span>
+            <p>Vexia's surface telepathy returns nothing when aimed at her — the dimensional offset disrupts clean reads. This unsettles Vexia, which Nuva finds mildly interesting.</p></article>
+        </div>
+      </section>
+      <section class="sec" id="n-tru"><div class="sec__head"><span class="sec__kick">08 — Truths</span><h2>The door she has never tested</h2></div>
+        <details class="spoiler"><summary>Open the sealed record</summary><div class="spoiler__body"><div class="tl">
+          <div class="tl__item"><span class="tl__when">Truth</span><h4>Her power is made of the worst day of her life</h4>
+            <p>The dimensional affinity that lets her protect Azalea came from a childhood trauma that nearly killed her. She has never connected the two.</p></div>
+          <div class="tl__item"><span class="tl__when">Fracture</span><h4>She does not know if the door is locked</h4>
+            <p>She has never tested whether Monstrous Form can still be reached. She does not know whether it is sealed or whether she is holding it shut.</p></div>
+          <div class="tl__item"><span class="tl__when">Contradiction</span><h4>She sees doorways and uses none of them</h4>
+            <p>She perceives dimensional layers constantly, yet has never stepped through to another dimension intentionally. The gaps are for hiding, never for leaving. Presence is purpose; leaving is abandonment.</p></div>
+        </div></div></details>
+      </section>
+      <nav class="pager"><a href="commander.html#silphira"><small>← Previous</small><strong>Silphira</strong></a>
+        <a href="index.html" style="text-align:right"><small>Back to</small><strong>All Commanders</strong></a></nav>
+    </main>
+  </div>
+</div>
 
 <script>
+/* ═══ AUTO IMAGE LOADER ═══ */
+(function(){
+  const EXT = ['webp','png','jpg','jpeg'];
+
+  document.querySelectorAll('.ph[data-img]').forEach(ph => {
+    if (ph.dataset.label) {
+      const s = document.createElement('span');
+      s.innerHTML = ph.dataset.label;
+      ph.appendChild(s);
+    }
+    const base = 'assets/' + ph.dataset.img;
+    const img = new Image();
+    img.alt = ph.dataset.alt || '';
+    img.decoding = 'async';
+    img.style.objectFit = ph.dataset.fit || 'cover';
+    img.style.objectPosition = ph.dataset.pos || 'center';
+
+    let i = 0;
+    img.onload = () => { ph.classList.add('has-img'); };
+    img.onerror = () => {
+      i++;
+      if (i < EXT.length) img.src = base + '.' + EXT[i];
+      else img.remove();
+    };
+    img.src = base + '.' + EXT[0];
+
+    ph.prepend(img);        /* masuk DOM dulu */
+    img.loading = 'lazy';   /* baru boleh lazy */
+  });
+
+  /* avatar strip sidebar */
+  document.querySelectorAll('.roster .av').forEach(av => {
+    const link = av.closest('a');
+    const id = link && link.dataset.view;
+    if (!id) return;
+    const base = 'assets/' + id + '-roster';
+    const im = new Image();
+    let i = 0;
+    im.onerror = () => { i++; if (i < EXT.length) im.src = base + '.' + EXT[i]; else im.remove(); };
+    im.onload = () => { av.appendChild(im); };
+    im.src = base + '.' + EXT[0];
+  });
+})();
 
 
+
+/* ═══ FORM TABS ═══ */
+document.addEventListener('click', e => {
+  const tab = e.target.closest('.forms__tab');
+  if (!tab) return;
+  const box = tab.closest('[data-forms]');
+  const tabs = [...box.querySelectorAll('.forms__tab')];
+  const idx = tabs.indexOf(tab);
+  tabs.forEach((t,i) => t.classList.toggle('is-active', i === idx));
+  box.querySelectorAll('.forms__panels > .panel')
+     .forEach((p,i) => p.classList.toggle('is-active', i === idx));
+});
 
 
 
@@ -389,7 +1769,7 @@ const TITLES = {roster:'Commanders',azalea:'Azalea',vorlag:'Vorlag',kazagar:'Kaz
   gorath:'Gorath',alleen:'Alleen',zargoth:"Zar'goth",vexia:'Vexia',silphira:'Silphira',nuva:'Nuva'};
 
 function go(id){
-  const target = document.getElementById('view-' + id) || document.getElementById('view-roster');
+  const target = document.getElementById('view-' + id);
   if (!target) return;
   document.querySelectorAll('.view').forEach(v => { v.hidden = (v !== target); });
   document.getElementById('crumb').textContent = TITLES[id] || 'Commanders';
@@ -408,18 +1788,8 @@ window.addEventListener('hashchange', () => {
   go(id);
 });
 
-document.addEventListener('click', e => {
-  const el = e.target.closest('[href^="#"]');
-  if (!el) return;
-  const id = el.getAttribute('href').slice(1);
-  if (!id || !document.getElementById('view-' + id)) return;
-  // let hashchange handle it
-});
-
-// Init from hash
 const initialId = window.location.hash.slice(1) || 'azalea';
 go(initialId);
-
 </script>
 </body>
 </html>

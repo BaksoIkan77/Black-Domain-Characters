@@ -7,7 +7,6 @@
 <title>Codex of Ruinea — The Black Domain</title>
 <style>
 
-
 /* ═══ TOKENS ═══ */
 :root{
   --bg:#0a0708; --panel:#140e11; --panel-2:#1a1216;
@@ -361,20 +360,6 @@ main{min-width:0;padding-top:30px}
 .cmd-scroll .cmd{flex:0 0 200px;scroll-snap-align:start}
 @media (max-width:900px){.cmd-scroll .cmd{flex:0 0 160px}
   .cmd-scroll{padding:4px 20px 16px}}
-
-
-
-/* ═══ CAROUSEL (horizontal scroll) ═══ */
-.cmd-scroll{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;padding:4px 28px 20px;scrollbar-width:thin;
-  scrollbar-color:var(--line) transparent}
-.cmd-scroll::-webkit-scrollbar{height:6px}
-.cmd-scroll::-webkit-scrollbar-track{background:transparent}
-.cmd-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
-.cmd-scroll .cmd{flex:0 0 200px;scroll-snap-align:start}
-@media (max-width:900px){.cmd-scroll .cmd{flex:0 0 160px}
-  .cmd-scroll{padding:4px 20px 16px}}
-
 </style>
 </head>
 <body>
@@ -382,30 +367,14 @@ main{min-width:0;padding-top:30px}
 <div class="topbar">
   <div class="topbar__in">
     <b>Codex of Ruinea</b><span class="sep">/</span>
-    <a class="cur" data-view="roster">The Black Domain</a>
+    <a class="cur" href="index.html">The Black Domain</a>
     <span class="sep">/</span>
     <span class="cur" id="crumb">Commanders</span>
-    <div class="topbar__right"><a data-view="roster">Commanders</a><a href="#">Atlas</a><a href="#">Timeline</a></div>
+    <div class="topbar__right"><a href="index.html">Commanders</a><a href="#">Atlas</a><a href="#">Timeline</a></div>
   </div>
 
 <!-- ══════════ ROSTER ══════════ -->
 <div class="view" id="view-roster">
-  <header class="hero">
-    <div class="hero__in hero__in--wide">
-      <div>
-        <p class="eyebrow">The Black Domain · Malakh-Kar</p>
-        <h1 class="sm">The Commanders</h1>
-        <p class="hero__tag">
-          One sovereign, eight commanders, and a hierarchy arranged as a weapon. The radicals
-          hold the frontier and receive honour, danger, and the dying. The loyalists hold the
-          interior and receive food, roads, and the supply belt. Every one of them can see
-          exactly what that arrangement means.
-        </p>
-      </div>
-    </div>
-  </header>
-  <div class="wrap">
-    <div class="view" id="view-roster">
   <header class="hero">
     <div class="hero__in hero__in--wide">
       <div>
@@ -476,12 +445,6 @@ main{min-width:0;padding-top:30px}
     </div>
   </div>
 </div>
-
-
-  </div>
-</div>
-
-
   </div>
 </div>
 
@@ -761,6 +724,7 @@ main{min-width:0;padding-top:30px}
 /* ═══ AUTO IMAGE LOADER ═══ */
 (function(){
   const EXT = ['webp','png','jpg','jpeg'];
+
   document.querySelectorAll('.ph[data-img]').forEach(ph => {
     if (ph.dataset.label) {
       const s = document.createElement('span');
@@ -773,6 +737,7 @@ main{min-width:0;padding-top:30px}
     img.decoding = 'async';
     img.style.objectFit = ph.dataset.fit || 'cover';
     img.style.objectPosition = ph.dataset.pos || 'center';
+
     let i = 0;
     img.onload = () => { ph.classList.add('has-img'); };
     img.onerror = () => {
@@ -781,10 +746,26 @@ main{min-width:0;padding-top:30px}
       else img.remove();
     };
     img.src = base + '.' + EXT[0];
-    ph.prepend(img);
-    img.loading = 'lazy';
+
+    ph.prepend(img);        /* masuk DOM dulu */
+    img.loading = 'lazy';   /* baru boleh lazy */
+  });
+
+  /* avatar strip sidebar */
+  document.querySelectorAll('.roster .av').forEach(av => {
+    const link = av.closest('a');
+    const id = link && link.dataset.view;
+    if (!id) return;
+    const base = 'assets/' + id + '-roster';
+    const im = new Image();
+    let i = 0;
+    im.onerror = () => { i++; if (i < EXT.length) im.src = base + '.' + EXT[i]; else im.remove(); };
+    im.onload = () => { av.appendChild(im); };
+    im.src = base + '.' + EXT[0];
   });
 })();
+
+
 </script>
 </body>
 </html>
