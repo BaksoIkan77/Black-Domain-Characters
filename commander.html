@@ -388,7 +388,19 @@ body{
   .layout{grid-template-columns:260px minmax(0,1fr);gap:72px}
 }
 
+/* ═══ PAGER: 3 kolom selalu sejajar ═══ */
+.pager{display:flex;gap:12px;flex-wrap:nowrap;align-items:stretch}
+.pager a{flex:1 1 0;min-width:0;overflow:hidden}
+.pager small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pager strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:620px){
+  .pager{gap:8px}
+  .pager a{padding:13px 11px}
+  .pager small{font-size:8px;letter-spacing:.1em}
+  .pager strong{font-size:13.5px;line-height:1.25}
+}
 </style>
+
 </head>
 <body>
 
