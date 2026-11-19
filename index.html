@@ -365,6 +365,45 @@ main{min-width:0;padding-top:30px}
 .cmd-scroll .cmd .ph{aspect-ratio:3/4;width:100%}
 .cmd-scroll .cmd--lead .ph{aspect-ratio:3/4}
 
+
+/* ═══ FLUID DESKTOP RESPONSIVENESS ═══ */
+:root{
+  --maxw:min(1420px, 92vw);
+}
+@media (min-width: 1440px){
+  :root{
+    --maxw:min(1600px, 94vw);
+  }
+}
+
+body{
+  font-size:clamp(16px, 0.4vw + 14.5px, 18px);
+}
+
+.hero__in--wide{
+  max-width:min(1100px, 95%);
+}
+.hero__tag{
+  max-width:min(80ch, 100%);
+  font-size:clamp(16.5px, 0.35vw + 15px, 19.5px);
+}
+
+.sec h2{
+  font-size:clamp(26px, 1.4vw + 18px, 38px);
+}
+.sec p.lead{
+  font-size:clamp(18.5px, 0.35vw + 17px, 21.5px);
+}
+
+@media (min-width: 1100px){
+  .cmd-scroll .cmd{flex:0 0 245px}
+  .layout{grid-template-columns:230px minmax(0,1fr);gap:60px}
+}
+@media (min-width: 1500px){
+  .cmd-scroll .cmd{flex:0 0 270px}
+  .layout{grid-template-columns:260px minmax(0,1fr);gap:72px}
+}
+
 </style>
 </head>
 <body>
