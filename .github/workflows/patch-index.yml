@@ -32,7 +32,13 @@ jobs:
       - name: Jalankan patch
         run: |
           set -euo pipefail
-          for f in .github/scripts/*.py; do
+          shopt -s nullglob
+          scripts=(.github/scripts/*.py)
+          if [ ${#scripts[@]} -eq 0 ]; then
+            echo "Tidak ada patch .py — dilewati."
+            exit 0
+          fi
+          for f in "${scripts[@]}"; do
             echo "── $f"
             python3 "$f"
           done
