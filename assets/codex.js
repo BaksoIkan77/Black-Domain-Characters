@@ -5,10 +5,41 @@
    (router URL ada di commander.html)
    ═══════════════════════════════════════════════════════════ */
 
+/* ═══ ALIAS NAMA FILE ═══
+   Sebagian ilustrasi ter-upload dengan nama yang salah ketik
+   (mis. "shilpira-" untuk Silphira). Loader mencoba nama yang
+   benar lebih dulu, lalu varian alias ini. Jadi file boleh
+   di-rename kapan saja tanpa mengubah HTML. */
+const NAME_ALIASES = {
+  silphira: 'shilpira'   // nama benar: varian typo yang ada di assets/
+};
+
+const EXT = ['webp', 'png', 'jpg', 'jpeg'];
+
+/* semua varian basename untuk satu nama aset */
+function baseVariants(name) {
+  const out = [name];
+  for (const [correct, alias] of Object.entries(NAME_ALIASES)) {
+    if (name.includes(correct)) out.push(name.split(correct).join(alias));
+  }
+  return out;
+}
+
+/* daftar URL kandidat, berurutan; opsional fallback -grid → -roster */
+function imageCandidates(name, gridFallback) {
+  const names = baseVariants(name);
+  if (gridFallback && /-grid$/.test(name)) {
+    names.push(...baseVariants(name.replace(/-grid$/, '-roster')));
+  }
+  const urls = [];
+  for (const n of names) {
+    for (const e of EXT) urls.push('assets/' + n + '.' + e);
+  }
+  return urls;
+}
+
 /* ═══ AUTO IMAGE LOADER ═══ */
 (function () {
-  const EXT = ['webp', 'png', 'jpg', 'jpeg'];
-
   document.querySelectorAll('.ph[data-img]').forEach(ph => {
     if (ph.dataset.label) {
       const s = document.createElement('span');
@@ -16,14 +47,7 @@
       ph.appendChild(s);
     }
 
-    const base = 'assets/' + ph.dataset.img;
-    const alts = [];
-    for (const e of EXT) alts.push(base + '.' + e);
-    // fallback: kalau -grid tidak ada, coba -roster
-    if (/-grid$/.test(ph.dataset.img)) {
-      const rb = base.replace(/-grid$/, '-roster');
-      for (const e of EXT) alts.push(rb + '.' + e);
-    }
+    const urls = imageCandidates(ph.dataset.img, true);
 
     const img = new Image();
     img.alt = ph.dataset.alt || '';
@@ -35,10 +59,10 @@
     img.onload = () => ph.classList.add('has-img');
     img.onerror = () => {
       i++;
-      if (i < alts.length) img.src = alts[i];
+      if (i < urls.length) img.src = urls[i];
       else img.remove();
     };
-    img.src = alts[0];
+    img.src = urls[0];
 
     ph.prepend(img);
     img.loading = 'lazy';
@@ -51,16 +75,16 @@
     const m = href.match(/^([a-z0-9'-]+)\.html$/i);
     if (!m) return;
 
-    const base = 'assets/' + m[1].toLowerCase() + '-roster';
+    const urls = imageCandidates(m[1].toLowerCase() + '-roster', false);
     const im = new Image();
     let i = 0;
     im.onerror = () => {
       i++;
-      if (i < EXT.length) im.src = base + '.' + EXT[i];
+      if (i < urls.length) im.src = urls[i];
       else im.remove();
     };
     im.onload = () => { av.appendChild(im); };
-    im.src = base + '.' + EXT[0];
+    im.src = urls[0];
   });
 })();
 
